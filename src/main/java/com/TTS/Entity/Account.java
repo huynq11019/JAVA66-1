@@ -1,0 +1,75 @@
+package com.TTS.Entity;
+
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.JoinTable;
+import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+import javax.validation.constraints.Size;
+
+import org.hibernate.annotations.BatchSize;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Entity
+@Table(name = "accounts")
+public class Account extends SuperClass implements Serializable {
+	/**
+	 * @author huy giao su
+	 * @login_with : email and password
+	 */
+	private static final long serialVersionUID = 1L;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Integer id;
+	@Column(name = "fullname")
+	private String fullName;
+	@Size(min = 5, max = 50)
+	@Column(name = "password_hash", length = 50, nullable = false)
+	private String passwordHash;
+	@Column(name = "passowrd_slat")
+	private String passowrdSalt;
+	@Column(name = "descrption", length = 200)
+	private String description;
+	@Column(name = "phone_number", length = 15)
+	private String phoneNumber;
+	/*
+	 * status =0 là bình thường status = 1 là bị khóa status = 2 tài khoản Verry
+	 * Impotant Peple
+	 */
+	@Column(name = "status")
+	private Integer status = 0;
+	@Column(name = "dob")
+	private Instant DOB;
+	@Column(name = "email", length = 50)
+	private String email;
+	@JsonIgnore
+	@ManyToMany
+	@JoinTable(name = "account_authrority", joinColumns = {
+			@JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
+					@JoinColumn(name = "authrority_name", referencedColumnName = "name") })
+	@BatchSize(size = 10)
+	private Set<Authrority> authrority = new HashSet<>();
+	
+	@JsonIgnore
+	@OneToMany(mappedBy = "account_od")
+	private Set<Order> orders = new HashSet<>();
+
+}
