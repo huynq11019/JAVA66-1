@@ -106,7 +106,7 @@
 							<artifactId>mapstruct-processor</artifactId>
 							<version>${org.mapstruct.version}</version>
 						</path>
-				 		<path>
+						<path>
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok</artifactId>
 							<version>1.18.4</version>
@@ -115,13 +115,11 @@
 							<groupId>org.projectlombok</groupId>
 							<artifactId>lombok-mapstruct-binding</artifactId>
 							<version>0.2.0</version>
-						</path> 
-						
+						</path>
 					</annotationProcessorPaths>
 				</configuration>
 				
 			</plugin>
 		</plugins>
 	</build>
-
 </project>
