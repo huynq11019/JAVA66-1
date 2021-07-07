@@ -1,13 +1,11 @@
 package com.TTS.Rest;
 
 import java.util.List;
+//import java.util.logging.Logger;
 import java.util.stream.Collectors;
-
+import org.apache.log4j.Logger;
 import javax.validation.Valid;
 
-import org.mapstruct.factory.Mappers;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -27,7 +25,8 @@ import com.TTS.maper.AccountMapper;
 @RequestMapping("/api/acount")
 public class RestAccount {
 //public ResponseEntity<Account> 
-	private final static Logger _log = LoggerFactory.getLogger(RestAccount.class);
+//	private final static Logger _log = logger.getLogger(RestAccount.class);
+	 private static final Logger _log = Logger.getLogger(RestAccount.class);
 	@Autowired
 	private AccountService accService;
 	@Autowired
