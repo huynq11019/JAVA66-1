@@ -9,10 +9,10 @@ import org.springframework.util.MultiValueMap;
 import com.TTS.Entity.Account;
 
 public interface CustomAccountRepo {
-	   List<Account> search(MultiValueMap<String, String> queryParams, Pageable pageable);
+//	   List<Account> search(MultiValueMap<String, String> queryParams, Pageable pageable);
 
-	    Long count(MultiValueMap<String, String> queryParams);
+//	    Long count(MultiValueMap<String, String> queryParams);
 
-	    List<Account> getListUser();
+//	    List<Account> getListUser();
 
 }

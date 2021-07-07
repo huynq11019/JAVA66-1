@@ -7,6 +7,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.MultiValueMap;
 
+import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 
 public interface AccountService {
@@ -14,9 +15,8 @@ public interface AccountService {
 
 	Account getCurrentUser();
 
-	Optional<Account> findOne(Long id);
+	Optional<Account> findOne(Integer id);
 
-	Optional<Account> findByLogin(String login);
 
 	Optional<Account> findByEmail(String email);
 
@@ -25,7 +25,7 @@ public interface AccountService {
 	Optional<Account> getUserWithAuthorities();
 
 	List<Account> getListUser();
-
+	List<Account> getPage(int page, int limit, String sortBy, boolean order);
 	Account update(Account acc);
 
 	Account selfUpdate(Account acc);

@@ -6,65 +6,70 @@ import java.util.Optional;
 
 import javax.transaction.Transactional;
 
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 
+import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 import com.TTS.Entity.Authrority;
 import com.TTS.Repo.AccountRepo;
 import com.TTS.Service.AccountService;
 import com.TTS.Util.Validator;
+
+import lombok.extern.slf4j.Slf4j;
+
 @Service
 @Transactional
+
 public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private AccountRepo accountRepo;
+	private final static Logger _log = LoggerFactory.getLogger(AccountService.class);
 
 	@Override
 	public Account createUser(Account acc) {
 		// TODO Auto-generated method stub
-		if (acc.getId() != null) { // khi lưu mặc định id phải là null
+		if (acc.getId() == null) { // khi lưu mặc định id phải là null
 			acc.setStatus(0);
 			acc.setAuthrority(
 					Validator.isNotNull(acc.getAuthrority()) ? acc.getAuthrority() : new HashSet<Authrority>() {
 						private static final long serialVersionUID = 1L;
 						{
 							Authrority authro = new Authrority();
-							authro.setName("ROLE_USER");
+							authro.setName("USER");
 							add(authro);
 						}
 
 					});
-			accountRepo.save(acc);
+			_log.info("đã tạo một acocunt mới");
+			return accountRepo.save(acc);
 		}
+		_log.warn("thông tin tạo user không thành công vì id khác null");
 		return null;
 	}
 
 	@Override
 	public Account getCurrentUser() {
+		// lấy thoogn tin quan email
 		// TODO Auto-generated method stub
 		return null;
 	}
 
 	@Override
-	public Optional<Account> findOne(Long id) {
+	public Optional<Account> findOne(Integer id) {
 		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Optional<Account> findByLogin(String login) {
-		// TODO Auto-generated method stub
-		return null;
+		return accountRepo.findById(id);
 	}
 
 	@Override
 	public Optional<Account> findByEmail(String email) {
 		// TODO Auto-generated method stub
-		return null;
+		return accountRepo.findByEmail(email);
 	}
 
 	@Override
@@ -87,10 +92,19 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public Account update(Account acc) {
-		// TODO Auto-generated method stub
-		return null;
+		if (acc.getId()== null) {
+			return null;
+		}
+		Account account = accountRepo.findById(acc.getId())
+				.orElseThrow(() -> new IndexOutOfBoundsException("ID account update không tồn tại"));
+		return accountRepo.save(acc);
+
 	}
 
+//	private Account setPropertyOfAccount(Account acc, AccountDTO dto) {
+//		
+//		return null;
+//	}
 	@Override
 	public Account selfUpdate(Account acc) {
 		// TODO Auto-generated method stub
@@ -125,6 +139,12 @@ public class AccountServiceImpl implements AccountService {
 	public void updatePassword(Account acc, boolean selfUpdate) {
 		// TODO Auto-generated method stub
 
+	}
+
+	@Override
+	public List<Account> getPage(int page, int limit, String sortBy, boolean order) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 
 }

@@ -15,6 +15,9 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.validation.constraints.Email;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
 import org.hibernate.annotations.BatchSize;
@@ -39,14 +42,17 @@ public class Account extends SuperClass implements Serializable {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
-	@Column(name = "fullname")
+	@NotBlank(message="Tên không được để trống")
+	@NotNull(message = "Ful name đang là null")
+	@Column(name = "fullname",length=80)
 	private String fullName;
-	@Size(min = 5, max = 50)
+	@Size(min = 5, max = 50, message = "độ dài passowrd từ 0-50 ký tự")
 	@Column(name = "password_hash", length = 50, nullable = false)
 	private String passwordHash;
 	@Column(name = "passowrd_slat")
 	private String passowrdSalt;
 	@Column(name = "descrption", length = 200)
+	@Size(min = 8, max = 15 , message = "số điện thoại từ 0-15 ký tự")
 	private String description;
 	@Column(name = "phone_number", length = 15)
 	private String phoneNumber;
@@ -58,16 +64,18 @@ public class Account extends SuperClass implements Serializable {
 	private Integer status = 0;
 	@Column(name = "dob")
 	private Instant DOB;
+	@NotBlank(message = "email không được để trống")
+	@NotNull(message = "email không được null")
+	@Email(message = "email không đúng định dạng")
 	@Column(name = "email", length = 50)
 	private String email;
-	@JsonIgnore
+//	@JsonIgnore
 	@ManyToMany
 	@JoinTable(name = "account_authrority", joinColumns = {
 			@JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "authrority_name", referencedColumnName = "name") })
 	@BatchSize(size = 10)
-	private Set<Authrority> authrority = new HashSet<>();
-	
+	private Set<Authrority> authrority = new HashSet<>();	
 	@JsonIgnore
 	@OneToMany(mappedBy = "account_od")
 	private Set<Order> orders = new HashSet<>();

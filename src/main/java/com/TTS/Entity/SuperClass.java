@@ -25,12 +25,14 @@ public abstract class SuperClass implements Serializable {
 	private static final long serialVersionUID = 1L;
 	@CreatedDate
 	@Column(name = "created_at", updatable = false)
-	private Date createdAt;
-	@Column(name = "created_by")
+	private Date createdAt = new Date();
+	@Column(name = "created_by", updatable = false)
 	private Integer createdBy;
 	@LastModifiedDate
 	@Column(name="last_updated")
-	private Instant lastUpdated ;
+	private Instant lastUpdated = Instant.now();
 	@Column(name = "updated_by")
 	private Integer updatedBy;
+	@Column(name = "deleteAt")
+	private Instant deleteAt ;
 }
