@@ -22,7 +22,7 @@ import com.TTS.Service.AccountService;
 import com.TTS.maper.AccountMapper;
 
 @RestController
-@RequestMapping("/api/acount")
+@RequestMapping("/api/")
 public class RestAccount {
 //public ResponseEntity<Account> 
 //	private final static Logger _log = logger.getLogger(RestAccount.class);
@@ -32,7 +32,7 @@ public class RestAccount {
 	@Autowired
 	private AccountMapper accountMapper;
 
-	@GetMapping("/getlist")
+	@GetMapping("/admin/account/getlist")
 	public ResponseEntity<List<AccountDTO>> getAll() {
 		System.err.println("đã kết nối");
 		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
@@ -42,7 +42,7 @@ public class RestAccount {
 		return ResponseEntity.status(HttpStatus.OK).body(listOut);
 	}
 
-	@PostMapping("/create")
+	@PostMapping("/register")
 	public ResponseEntity<Account> createAccount(@Valid @RequestBody AccountDTO acc) {
 //		System.out.println("account is validate");
 		_log.debug("account đã được validate");

@@ -28,7 +28,7 @@ public class AccountDTO {
 	@NotNull(message = "fullname đang là null")
 	@Size(min = 5, max = 50, message = "tên chỉ trong khoản 5-50 ký tự")
 	private String fullName;
-	@Size(min = 5, max = 200, message = "độ dài passowrd từ 0-50 ký tự from dto")
+	@Size(min = 5,  message = "độ dài passowrd từ 0-200 ký tự from dto")
 	private String passwordHash;
 	private String passowrdSalt;
 	@Size(max = 200, message = "Mô tả phải ít hơn 200 ký tự")
