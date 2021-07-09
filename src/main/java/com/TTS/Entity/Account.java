@@ -7,6 +7,7 @@ import java.util.Set;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -46,8 +47,8 @@ public class Account extends SuperClass implements Serializable {
 	@NotNull(message = "Ful name đang là null")
 	@Column(name = "fullname",length=80)
 	private String fullName;
-	@Size(min = 5, max = 50, message = "độ dài passowrd từ 0-50 ký tự")
-	@Column(name = "password_hash", length = 50, nullable = false)
+	@Size(min = 5, message = "độ dài passowrd từ 0-50 ký tự")
+	@Column(name = "password_hash",  nullable = false)
 	private String passwordHash;
 	@Column(name = "passowrd_slat")
 	private String passowrdSalt;
@@ -67,10 +68,10 @@ public class Account extends SuperClass implements Serializable {
 	@NotBlank(message = "email không được để trống")
 	@NotNull(message = "email không được null")
 	@Email(message = "email không đúng định dạng")
-	@Column(name = "email", length = 50)
+	@Column(name = "email", length = 50,unique = true)
 	private String email;
 //	@JsonIgnore
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "account_authrority", joinColumns = {
 			@JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "authrority_name", referencedColumnName = "name") })
@@ -79,5 +80,11 @@ public class Account extends SuperClass implements Serializable {
 	@JsonIgnore
 	@OneToMany(mappedBy = "account_od")
 	private Set<Order> orders = new HashSet<>();
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", fullName=" + fullName + ", passwordHash=" + passwordHash + ", passowrdSalt="
+				+ passowrdSalt + ", description=" + description + ", phoneNumber=" + phoneNumber + ", status=" + status
+				+ ", DOB=" + DOB + ", email=" + email + "]";
+	}
 
 }

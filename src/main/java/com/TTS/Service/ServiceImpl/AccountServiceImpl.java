@@ -11,6 +11,8 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 
@@ -29,13 +31,18 @@ import lombok.extern.slf4j.Slf4j;
 public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private AccountRepo accountRepo;
+	@Autowired
+	PasswordEncoder passwordEncoder;
 	private final static Logger _log = LoggerFactory.getLogger(AccountService.class);
 
 	@Override
 	public Account createUser(Account acc) {
 		// TODO Auto-generated method stub
+//		Account account = accountRepo.findById(acc.getId())
+//				.orElseThrow(() -> new IndexOutOfBoundsException("ID account update không tồn tại"));
 		if (acc.getId() == null) { // khi lưu mặc định id phải là null
-			acc.setStatus(0);
+			acc.setStatus(0); // Mặc định các trạng thái sẽ là null
+			acc.setPasswordHash(passwordEncoder.encode(acc.getPasswordHash()));
 			acc.setAuthrority(
 					Validator.isNotNull(acc.getAuthrority()) ? acc.getAuthrority() : new HashSet<Authrority>() {
 						private static final long serialVersionUID = 1L;
@@ -47,6 +54,7 @@ public class AccountServiceImpl implements AccountService {
 
 					});
 			_log.info("đã tạo một acocunt mới");
+			System.out.println(acc);
 			return accountRepo.save(acc);
 		}
 		_log.warn("thông tin tạo user không thành công vì id khác null");
