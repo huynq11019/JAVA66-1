@@ -960,3 +960,187 @@ org.hibernate.LazyInitializationException: failed to lazily initialize a collect
 [2021-07-08T17:32:00.000Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
 [2021-07-08T17:32:00.000Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
 [2021-07-08T17:32:00.000Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-1] [41] [INFO ] đã load danh sách user
+[2021-07-08T17:37:37.037Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] 
+[2021-07-08T17:42:51.051Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] 
+[2021-07-08T17:43:33.033Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] 
+[2021-07-08T17:43:33.033Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [48] [DEBUG] account đã được validate
+[2021-07-09T10:17:50.050Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] 
+[2021-07-09T10:18:11.011Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [35] [INFO ] 
+[2021-07-09T10:18:23.023Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [35] [INFO ] 
+[2021-07-09T10:18:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-8] [35] [INFO ] 
+[2021-07-09T10:18:47.047Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-10] [35] [INFO ] 
+[2021-07-09T10:18:48.048Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-10] [30] [DEBUG] user login progress
+[2021-07-09T10:18:48.048Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-10] [39] [DEBUG] genarate token fromhuynqph11019@gmail.com21
+[2021-07-09T10:19:38.038Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] 
+[2021-07-09T10:19:38.038Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [48] [DEBUG] account đã được validate
+[2021-07-09T10:32:17.017Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:32:17.017Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:32:17.017Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:32:18.018Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:32:18.018Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T10:37:44.044Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:37:44.044Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-09T10:37:44.044Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:37:44.044Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:41:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:41:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-09T10:41:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:41:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:41:22.022Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-1] [41] [INFO ] đã load danh sách user
+[2021-07-09T10:41:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:41:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-09T10:41:40.040Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:41:40.040Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:41:40.040Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [41] [INFO ] đã load danh sách user
+[2021-07-09T10:42:00.000Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:42:00.000Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:42:00.000Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:42:00.000Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:45:10.010Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:45:10.010Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:45:10.010Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:45:10.010Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:45:10.010Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T10:54:24.024Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:54:24.024Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:54:24.024Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:54:24.024Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:56:25.025Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:56:25.025Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:56:25.025Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:56:26.026Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:57:03.003Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:57:03.003Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:57:03.003Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:57:03.003Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:57:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:57:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:57:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:57:23.023Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:59:56.056Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:59:56.056Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T10:59:56.056Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:59:57.057Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T10:59:58.058Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T10:59:58.058Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-09T10:59:58.058Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T10:59:59.059Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:00:15.015Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:00:15.015Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-09T11:00:15.015Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:00:16.016Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:00:16.016Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-1] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:11:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:11:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:11:06.006Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:11:06.006Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:11:07.007Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:11:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:11:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-09T11:11:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:11:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:11:52.052Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:11:52.052Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-09T11:11:52.052Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:11:52.052Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:12:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:12:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:12:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:12:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:12:21.021Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:14:39.039Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:14:39.039Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:14:39.039Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:14:39.039Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:14:40.040Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:16:08.008Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:16:08.008Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-09T11:16:08.008Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:16:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:16:08.008Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:17:04.004Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:17:04.004Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:17:04.004Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:17:04.004Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:17:04.004Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:17:49.049Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:17:49.049Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:17:49.049Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:17:50.050Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:17:50.050Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:19:10.010Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:19:10.010Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:19:10.010Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:19:11.011Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:19:11.011Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:19:45.045Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:19:45.045Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:19:45.045Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:19:45.045Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:19:45.045Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:20:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:20:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:20:06.006Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:20:06.006Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:20:06.006Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:20:19.019Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:20:19.019Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-09T11:20:19.019Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:20:19.019Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:20:19.019Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:20:26.026Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:20:26.026Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:20:26.026Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:20:27.027Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:20:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:20:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:20:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:20:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:20:56.056Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:20:56.056Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-09T11:20:56.056Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:20:56.056Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:21:00.000Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:21:00.000Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [38] [INFO ] true
+[2021-07-09T11:21:00.000Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-6] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:21:00.000Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-6] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:21:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:21:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:21:06.006Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:21:06.006Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:21:07.007Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:21:35.035Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:21:35.035Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-09T11:21:35.035Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:21:35.035Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:21:35.035Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:21:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:21:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:21:40.040Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:21:40.040Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:21:40.040Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:22:14.014Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:22:14.014Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-09T11:22:14.014Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:22:14.014Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:22:14.014Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:23:20.020Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:23:20.020Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-09T11:23:20.020Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:23:20.020Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:23:20.020Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-1] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:23:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:23:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-09T11:23:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:23:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:23:22.022Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:23:24.024Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:23:24.024Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-09T11:23:24.024Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:23:24.024Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:23:24.024Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [41] [INFO ] đã load danh sách user
+[2021-07-09T11:23:26.026Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [35] [INFO ] eyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyMSIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI1ODg3MTI4fQ.8NCmxDJpL1lPoyFDeUezNloFcc0vEgjzGTwYdjKb7GqWpnEPdBsDu4N-YoywOk7Alp7gbK8r532hgthsHBk6lw
+[2021-07-09T11:23:26.026Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-09T11:23:26.026Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-09T11:23:26.026Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-09T11:23:26.026Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-4] [41] [INFO ] đã load danh sách user

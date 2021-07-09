@@ -21,8 +21,8 @@ public class DomainUserDetailsService implements UserDetailsService {
 
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-		Account account = accountRepo.findByEmail(username).get();
-//				.orElseThrow(() -> new UserNotActiveException("user không tồn tại trong hệ thống"));
+		Account account = accountRepo.findByEmail(username)
+				.orElseThrow(() -> new UserNotActiveException("user không tồn tại trong hệ thống"));
 		if (account == null) {
 			return null;
 		}
@@ -34,8 +34,8 @@ public class DomainUserDetailsService implements UserDetailsService {
 	}
 
 	public UserDetails loadUserByID(Integer id) {
-		Account account = accountRepo.findById(id).get();
-//				.orElseThrow(() -> new UsernameNotFoundException("user không tồn tại trong hệ thống"));
+		Account account = accountRepo.findById(id)
+				.orElseThrow(() -> new UsernameNotFoundException("user không tồn tại trong hệ thống"));
 //		System.out.println(account);
 		_log.info("đang load user detail từ accountID");
 		return new CustomUserDetail(account.getId(), account.getEmail(), account.getPasswordHash(),

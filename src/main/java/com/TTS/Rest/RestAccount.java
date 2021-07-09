@@ -1,11 +1,10 @@
 package com.TTS.Rest;
 
 import java.util.List;
-//import java.util.logging.Logger;
-import java.util.stream.Collectors;
-import org.apache.log4j.Logger;
+
 import javax.validation.Valid;
 
+import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,12 +20,13 @@ import com.TTS.Entity.Account;
 import com.TTS.Service.AccountService;
 import com.TTS.maper.AccountMapper;
 
+
+
 @RestController
 @RequestMapping("/api/")
 public class RestAccount {
-//public ResponseEntity<Account> 
-//	private final static Logger _log = logger.getLogger(RestAccount.class);
-	 private static final Logger _log = Logger.getLogger(RestAccount.class);
+
+	private static final Logger _log = Logger.getLogger(RestAccount.class);
 	@Autowired
 	private AccountService accService;
 	@Autowired
@@ -35,21 +35,23 @@ public class RestAccount {
 	@GetMapping("/admin/account/getlist")
 	public ResponseEntity<List<AccountDTO>> getAll() {
 		System.err.println("đã kết nối");
-		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
-				.collect(Collectors.toList());
+//		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
+//				.collect(Collectors.toList());
 //		return ResponseEntity.ok(accService.getListUser());
+		List<AccountDTO> listOut = accountMapper.toListDto(accService.getListUser());
 		_log.info("đã load danh sách user");
 		return ResponseEntity.status(HttpStatus.OK).body(listOut);
 	}
 
 	@PostMapping("/register")
-	public ResponseEntity<Account> createAccount(@Valid @RequestBody AccountDTO acc) {
+	public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO acc) {
 //		System.out.println("account is validate");
-		_log.debug("account đã được validate");
-		System.out.println(acc);
+		_log.debug("account validated:" + acc.toString());
+
 		Account account = accountMapper.toEntity(acc);
 		Account accSaved = accService.createUser(account);
-		return ResponseEntity.ok(accSaved);
+		AccountDTO accountDTO = accountMapper.toDto(accSaved);
+		return ResponseEntity.ok(accountDTO);
 	}
 
 	@PutMapping("/update")

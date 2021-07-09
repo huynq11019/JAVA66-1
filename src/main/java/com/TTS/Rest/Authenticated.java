@@ -44,8 +44,8 @@ public class Authenticated {
 			String jwt = tokenPovider.createToken((CustomUserDetail) authentication.getPrincipal());
 			return new JWTtoken(jwt, "bruh", custom.getEmailLogin());
 		} catch (Exception e) {
-			log.error("đăng nhập không thành công");
-			e.printStackTrace();
+			log.error("đăng nhập không thành công",e);
+//			e.printStackTrace();
 			throw new NotFoundException("tài khoản mật khẩu không chính xác");
 		}
 	}
