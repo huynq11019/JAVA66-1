@@ -16,32 +16,26 @@ import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 import com.TTS.Entity.Authrority;
 
-
-
-
 @Mapper(componentModel = "spring")
-public interface AccountMapper extends EntityMaper<AccountDTO, Account> {
-	
+public interface AccountMapper {
+
 	public AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);
+
 	@Mappings({ @Mapping(source = "entity", target = "authrority", qualifiedByName = "fromAuthrority"),
-		   @Mapping(target = "orderString", ignore = true),
-		
+//		   @Mapping(target = "orderString", ignore = true),		
 	})
 	AccountDTO toDto(Account entity);
 
-	@Mappings({ @Mapping(source = "dto", target = "authrority", qualifiedByName = "toAuthrority") })
+	@Mappings({ @Mapping(target = "passwordHash",source = "dto.password") 
+	,@Mapping(source = "dto", target = "authrority", qualifiedByName = "toAuthrority"),
+			})
 	Account toEntity(AccountDTO dto);
 
-	@Override
 	default List<AccountDTO> toListDto(List<Account> entityList) {
 		List<AccountDTO> dtoList = new ArrayList<>();
-		dtoList = entityList.stream()
-				.map(this::toDto)
-				.collect(Collectors.toList());
+		dtoList = entityList.stream().map(this::toDto).collect(Collectors.toList());
 		return dtoList;
 	}
-	
-
 
 	default Account formID(Integer id) {
 		if (id == null) {

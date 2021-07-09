@@ -20,13 +20,12 @@ import com.TTS.Entity.Account;
 import com.TTS.Service.AccountService;
 import com.TTS.maper.AccountMapper;
 
-
-
 @RestController
 @RequestMapping("/api/")
 public class RestAccount {
 
 	private static final Logger _log = Logger.getLogger(RestAccount.class);
+//	private static final Log _log = LogFactory.getLog(RestAccount.class);
 	@Autowired
 	private AccountService accService;
 	@Autowired
@@ -38,9 +37,16 @@ public class RestAccount {
 //		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
 //				.collect(Collectors.toList());
 //		return ResponseEntity.ok(accService.getListUser());
-		List<AccountDTO> listOut = accountMapper.toListDto(accService.getListUser());
-		_log.info("đã load danh sách user");
-		return ResponseEntity.status(HttpStatus.OK).body(listOut);
+		try {
+			List<AccountDTO> listOut = accountMapper.toListDto(accService.getListUser());
+			_log.info("đã load danh sách user");
+			return ResponseEntity.status(HttpStatus.OK).body(listOut);
+
+		} catch (Exception e) {
+			System.out.println("loi");
+			e.printStackTrace();
+		}
+		return null;
 	}
 
 	@PostMapping("/register")
@@ -51,13 +57,21 @@ public class RestAccount {
 		Account account = accountMapper.toEntity(acc);
 		Account accSaved = accService.createUser(account);
 		AccountDTO accountDTO = accountMapper.toDto(accSaved);
+		accountDTO.setPassword("password này đã được mã hóa");
 		return ResponseEntity.ok(accountDTO);
 	}
 
-	@PutMapping("/update")
+	@PutMapping("/admin/account/update")
 	public ResponseEntity<Boolean> updateAccount(@Valid @RequestBody AccountDTO accDTO) {
 		try {
+			
+			if (accDTO.getId() == null) {
+				_log.warn("Account di không được để null");
+				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
+				
+			}
 			Account account = accountMapper.toEntity(accDTO);
+			_log.info(account);
 			accService.update(account);
 			_log.info("Thực hiện udpate thành công");
 			return ResponseEntity.ok(true);
