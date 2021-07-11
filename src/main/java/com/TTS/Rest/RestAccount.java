@@ -25,7 +25,7 @@ import com.TTS.maper.AccountMapper;
 public class RestAccount {
 
 	private static final Logger _log = Logger.getLogger(RestAccount.class);
-//	private static final Log _log = LogFactory.getLog(RestAccount.class);
+////	private static final Log _log = LogFactory.getLog(RestAccount.class);
 	@Autowired
 	private AccountService accService;
 	@Autowired
