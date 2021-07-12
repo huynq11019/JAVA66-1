@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
@@ -19,7 +20,7 @@ import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 import com.TTS.Service.AccountService;
 import com.TTS.maper.AccountMapper;
-
+@CrossOrigin("*	")
 @RestController
 @RequestMapping("/api/")
 public class RestAccount {

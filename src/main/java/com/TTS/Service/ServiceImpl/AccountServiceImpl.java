@@ -10,7 +10,10 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -22,6 +25,7 @@ import com.TTS.Entity.Authrority;
 import com.TTS.Repo.AccountRepo;
 import com.TTS.Service.AccountService;
 import com.TTS.Util.Validator;
+import com.google.common.collect.ImmutableSortedSet;
 
 import lombok.extern.slf4j.Slf4j;
 
@@ -105,6 +109,7 @@ public class AccountServiceImpl implements AccountService {
 		}
 		Account account = accountRepo.findById(acc.getId())
 				.orElseThrow(() -> new IndexOutOfBoundsException("ID account update không tồn tại"));
+		acc.setPasswordHash(account.getPasswordHash());
 		return accountRepo.save(acc);
 
 	}
@@ -119,15 +124,10 @@ public class AccountServiceImpl implements AccountService {
 		return null;
 	}
 
-	@Override
-	public Account updateByMobile(Account acc) {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	@Override
 	public Long countActiveAccount() {
-		// TODO Auto-generated method stub
+		// 
 		return null;
 	}
 
@@ -139,7 +139,7 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public List<String> getAllAuthorities() {
-		// TODO Auto-generated method stub
+		// lấy hết authroity của User
 		return null;
 	}
 
@@ -151,8 +151,16 @@ public class AccountServiceImpl implements AccountService {
 
 	@Override
 	public List<Account> getPage(int page, int limit, String sortBy, boolean order) {
-		// TODO Auto-generated method stub
-		return null;
+		Direction directtion = Direction.DESC;
+		if (order) {
+			directtion = Direction.ASC;
+		}
+		Sort sort = Sort.by(directtion,sortBy);
+		Pageable paging = PageRequest.of(page, limit, sort);
+		return accountRepo.findAll(paging).getContent();
+		
+		
+//		return null;
 	}
 
 }
