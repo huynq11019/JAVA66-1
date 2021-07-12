@@ -3806,3 +3806,73 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'password_h
 [2021-07-12T00:48:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
 [2021-07-12T00:48:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
 [2021-07-12T00:48:53.053Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [43] [INFO ] đã load danh sách user
+[2021-07-12T11:03:45.045Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [35] [INFO ] tokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI2MTExODQ4fQ.UFk1202n-bMRPn4GIQYPCaTsJ5HeWcM8_2lMbtC4N-E74h04Wm28eh8glmpLIELs9SsujW9QPml-RURoQS_nbA
+[2021-07-12T11:03:45.045Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-12T11:03:45.045Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:03:45.045Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] ?ang load user detail t? accountID
+[2021-07-12T11:03:45.045Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [46] [INFO ] ?� load danh s�ch user
+[2021-07-12T11:04:17.017Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [35] [INFO ] tokennull
+[2021-07-12T11:05:05.005Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [35] [INFO ] tokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI2MTExODQ4fQ.UFk1202n-bMRPn4GIQYPCaTsJ5HeWcM8_2lMbtC4N-E74h04Wm28eh8glmpLIELs9SsujW9QPml-RURoQS_nbA
+[2021-07-12T11:05:05.005Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-12T11:05:05.005Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:05:05.005Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] ?ang load user detail t? accountID
+[2021-07-12T11:05:06.006Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:05:06.006Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] ?ang load user detail t? accountID
+[2021-07-12T11:05:45.045Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] tokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI2MTExODQ4fQ.UFk1202n-bMRPn4GIQYPCaTsJ5HeWcM8_2lMbtC4N-E74h04Wm28eh8glmpLIELs9SsujW9QPml-RURoQS_nbA
+[2021-07-12T11:05:45.045Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-12T11:05:45.045Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:05:45.045Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:05:45.045Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:05:45.045Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:08:08.008Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] tokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI2MTExODQ4fQ.UFk1202n-bMRPn4GIQYPCaTsJ5HeWcM8_2lMbtC4N-E74h04Wm28eh8glmpLIELs9SsujW9QPml-RURoQS_nbA
+[2021-07-12T11:08:08.008Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-12T11:08:08.008Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:08:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:08:08.008Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:08:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:09:18.018Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [35] [INFO ] tokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsImF1dGgiOiJVU0VSLEFETUlOIiwiZXhwIjoxNjI2MTExODQ4fQ.UFk1202n-bMRPn4GIQYPCaTsJ5HeWcM8_2lMbtC4N-E74h04Wm28eh8glmpLIELs9SsujW9QPml-RURoQS_nbA
+[2021-07-12T11:09:18.018Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [38] [INFO ] true
+[2021-07-12T11:09:18.018Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-6] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:09:18.018Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-6] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:09:18.018Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-6] [46] [INFO ] đã load danh sách user
+[2021-07-12T11:09:35.035Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-7] [35] [INFO ] tokennull
+[2021-07-12T11:09:36.036Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [30] [DEBUG] user login progress
+[2021-07-12T11:09:36.036Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-7] [39] [DEBUG] genarate token fromlala@gmail.com26
+[2021-07-12T11:10:39.039Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-9] [35] [INFO ] tokeneyJhbGciOiJIUzUxMiJ9.eyJzdWIiOiIyNiIsImF1dGgiOiJVU0VSIiwiZXhwIjoxNjI2MTQ5Mzc2fQ.jvOMxuicOmc2DYMHAwjiAeY09kchRD-307WmSH6p9zMU5dTxjBQjGXZy7aVRTuC7bflS4PWbyR5p7fSzl8H71Q
+[2021-07-12T11:10:39.039Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-9] [38] [INFO ] true
+[2021-07-12T11:10:39.039Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-9] [66] [INFO ] [USER]
+[2021-07-12T11:10:40.040Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-9] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:12:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] tokennull
+[2021-07-12T11:24:01.001Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-8] [30] [DEBUG] user login progress
+[2021-07-12T11:24:01.001Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-8] [39] [DEBUG] genarate token fromvosong9201@gmail.com22
+[2021-07-12T11:27:10.010Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-12T11:27:10.010Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:27:10.010Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:27:10.010Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:27:10.010Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:40:33.033Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-12T11:40:33.033Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:40:34.034Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:40:34.034Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:40:34.034Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:43:07.007Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-12T11:43:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:43:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:43:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:43:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:43:07.007Z] [com.TTS.Service.ServiceImpl.AccountServiceImpl] [http-nio-8099-exec-2] [83] [INFO ] Account [id=22, fullName=Tr?n quang huy, passwordHash=$2a$10$piKiu/L1H3qfFUZ8WlbxE.KizqRAFaFgqePbAstqrJhmwwRM9QAd2, passowrdSalt=null, description=không ph?i huy, phoneNumber=0925573154, status=0, DOB=1959-12-03T04:53:49Z, email=vosong9201@gmail.com]
+[2021-07-12T11:45:16.016Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-12T11:45:16.016Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:45:17.017Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:45:17.017Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:45:17.017Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:57:04.004Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-12T11:57:04.004Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:57:04.004Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:57:04.004Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:57:04.004Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:57:08.008Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-12T11:57:08.008Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:57:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-12T11:57:08.008Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-12T11:57:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID

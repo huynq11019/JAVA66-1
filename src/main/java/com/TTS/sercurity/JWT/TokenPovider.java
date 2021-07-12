@@ -36,7 +36,7 @@ public class TokenPovider {
 
 	// tạo ra jwt từ thông tin user
 	public String createToken(CustomUserDetail userDetail) {
-		_log.debug("genarate token from" + userDetail.getUsername() + userDetail.getIdAccount());
+		_log.debug("genarate token from" + userDetail.getUsername() +"id: "+ userDetail.getIdAccount());
 		Date now = new Date();
 		Date expiryDate = new Date(now.getTime() + JWT_EXPIRATION);
 		String authroriries = userDetail.getAuthorities().stream().map(GrantedAuthority::getAuthority)

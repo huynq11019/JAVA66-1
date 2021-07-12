@@ -20,9 +20,13 @@ import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 import com.TTS.Service.AccountService;
 import com.TTS.maper.AccountMapper;
+
+import io.swagger.annotations.ApiOperation;
+import io.swagger.models.Response;
+
 @CrossOrigin("*	")
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api")
 public class RestAccount {
 
 	private static final Logger _log = Logger.getLogger(RestAccount.class);
@@ -62,14 +66,15 @@ public class RestAccount {
 		return ResponseEntity.ok(accountDTO);
 	}
 
-	@PutMapping("/admin/account/update")
+	@PutMapping("/admin/account/update") // phải là admin mới cho update những user khác nhưng khoong dược update mật
+											// khẩu
 	public ResponseEntity<Boolean> updateAccount(@Valid @RequestBody AccountDTO accDTO) {
 		try {
-			
+
 			if (accDTO.getId() == null) {
 				_log.warn("Account di không được để null");
 				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
-				
+
 			}
 			Account account = accountMapper.toEntity(accDTO);
 			_log.info(account);
@@ -82,4 +87,22 @@ public class RestAccount {
 		}
 	}
 
+	@GetMapping("/account/getinfor")
+	@ApiOperation(value = "getInfor", notes = "Lấy thông tin Account từ Accesstoken")
+	public ResponseEntity<AccountDTO> getInforByaccessToken() throws Exception {
+		try {
+			Account account = accService.getCurrentUser();
+			AccountDTO dto = accountMapper.toDto(account);
+			return ResponseEntity.ok(dto);
+		} catch (Exception e) {
+			_log.error("lỗi mapping DTO", e);
+			throw new IndexOutOfBoundsException("không thể trả vì infor");
+		}
+	}
+
+	@PutMapping("/account/selfupdate")
+	public AccountDTO selfAccount(@Valid @RequestBody AccountDTO AccDTO) {
+		
+		return null;
+	}
 }

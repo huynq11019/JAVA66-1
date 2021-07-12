@@ -15,7 +15,7 @@ public class RequestLogin {
 	@NotNull(message = "email login không được isNUll")
 	@NotBlank(message = "email login khôn được để trống")
 	@Email(message = "email không đúng định dạng")
-	private String emailLoign;
+	private String emailLogin;
 	@NotNull(message = "password không được null")
 	@NotBlank
 	private String password;

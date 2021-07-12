@@ -32,7 +32,7 @@ public class RequestFilter extends OncePerRequestFilter {
 		
 		try {
 			String token = param.getTokenFormRequest();
-			_log.info("token"+token);
+//			_log.info("token"+token);
 		
 			if (StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)) {
 				_log.info(jwtTokenProvider.validateToken(token));
