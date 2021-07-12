@@ -109,6 +109,7 @@ public class AccountServiceImpl implements AccountService {
 		}
 		Account account = accountRepo.findById(acc.getId())
 				.orElseThrow(() -> new IndexOutOfBoundsException("ID account update không tồn tại"));
+		//up date nhưng không thay đổi acount
 		acc.setPasswordHash(account.getPasswordHash());
 		return accountRepo.save(acc);
 
