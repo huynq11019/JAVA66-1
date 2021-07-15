@@ -93,7 +93,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Optional<Account> findByEmail(String email) {
 		Optional<Account> acc = accountRepo.findByEmail(email);
-		if (acc == null) {
+		if (acc. == null) {
 			_log.warn("lỗi tìm kiếm: email không tồn tại");
 			return null;
 		}
@@ -139,7 +139,7 @@ public class AccountServiceImpl implements AccountService {
 		// kiểm tra có phải đang người dùng đang tự uodate không
 		Integer idAccountUpdate = acc.getId();
 		Integer idAccesstoken = param.getAccountId();
-		if(idAccesstoken == idAccountUpdate) {
+		if(idAccesstoken.equals(idAccountUpdate)) {
 			this.update(acc);
 		}
 
