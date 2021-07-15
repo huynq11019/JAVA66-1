@@ -6,6 +6,7 @@ import javax.validation.Valid;
 
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -19,12 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 import com.TTS.Service.AccountService;
+import com.TTS.Util.CookieService;
 import com.TTS.maper.AccountMapper;
 
 import io.swagger.annotations.ApiOperation;
-import io.swagger.models.Response;
 
-@CrossOrigin("*	")
+@CrossOrigin("*")
 @RestController
 @RequestMapping("/api")
 public class RestAccount {
@@ -35,17 +36,24 @@ public class RestAccount {
 	private AccountService accService;
 	@Autowired
 	private AccountMapper accountMapper;
-
+	@Autowired
+	private CookieService cookieService;
 	@GetMapping("/admin/account/getlist")
 	public ResponseEntity<List<AccountDTO>> getAll() {
-		System.err.println("đã kết nối");
+//		System.err.println("đã kết nối");
 //		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
 //				.collect(Collectors.toList());
 //		return ResponseEntity.ok(accService.getListUser());
+		//lấy danh sách cookie đã có
+		System.out.println(cookieService.getvalue("user"));
 		try {
 			List<AccountDTO> listOut = accountMapper.toListDto(accService.getListUser());
 			_log.info("đã load danh sách user");
-			return ResponseEntity.status(HttpStatus.OK).body(listOut);
+			
+			 HttpHeaders responseHeaders = new HttpHeaders();
+			 responseHeaders.add(HttpHeaders.SET_COOKIE, "12345678909gbhuujn n  ");
+			cookieService.add("user", "123432423467890", 2,false);
+			return ResponseEntity.status(HttpStatus.OK).headers(responseHeaders).body(listOut);
 
 		} catch (Exception e) {
 			System.out.println("loi");

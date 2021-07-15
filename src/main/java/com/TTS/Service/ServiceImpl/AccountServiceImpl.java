@@ -75,7 +75,7 @@ public class AccountServiceImpl implements AccountService {
 
 		Integer id = param.getAccountId();
 		//
-		Account curentAccount = accountRepo.findById(id).orElseThrow();
+		Account curentAccount = accountRepo.findById(id).get();
 //		_log.info(curentAccount.toString());
 		return curentAccount;
 	}
@@ -93,7 +93,7 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public Optional<Account> findByEmail(String email) {
 		Optional<Account> acc = accountRepo.findByEmail(email);
-		if (acc.isEmpty()) {
+		if (acc == null) {
 			_log.warn("lỗi tìm kiếm: email không tồn tại");
 			return null;
 		}
