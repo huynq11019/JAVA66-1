@@ -6,6 +6,7 @@
 2021-07-07 15:53:52 INFO  RestAccount:41 - đã load danh sách user
 2021-07-07 15:56:01 INFO       RestAccount:41 - đã load danh sách user
 2021-07-07 15:56:35 INFO       RestAccount:41 - đã load danh sách user
+<<<<<<< HEAD
 [2021-07-07T16:31:28.028Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-10] [41] [INFO ] ?� load danh s�ch user
 [2021-07-07T16:34:28.028Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-6] [41] [INFO ] đã load danh sách user
 [2021-07-07T16:51:46.046Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-1] [41] [INFO ] đã load danh sách user
@@ -3710,3 +3711,5 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'password_h
 [2021-07-10T16:26:23.023Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [35] [INFO ] 
 [2021-07-10T16:27:14.014Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [35] [INFO ] 
 [2021-07-10T16:42:20.020Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [35] [INFO ] 
+=======
+>>>>>>> parent of d588ed4 (Merge pull request #5 from huynq11019/Huy)

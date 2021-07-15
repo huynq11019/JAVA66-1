@@ -1,10 +1,11 @@
 package com.TTS.Rest;
 
 import java.util.List;
-
+//import java.util.logging.Logger;
+import java.util.stream.Collectors;
+import org.apache.log4j.Logger;
 import javax.validation.Valid;
 
-import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -21,57 +22,46 @@ import com.TTS.Service.AccountService;
 import com.TTS.maper.AccountMapper;
 
 @RestController
-@RequestMapping("/api/")
+@RequestMapping("/api/acount")
 public class RestAccount {
+<<<<<<< HEAD
 
 	private static final Logger _log = Logger.getLogger(RestAccount.class);
 ////	private static final Log _log = LogFactory.getLog(RestAccount.class);
+=======
+//public ResponseEntity<Account> 
+//	private final static Logger _log = logger.getLogger(RestAccount.class);
+	 private static final Logger _log = Logger.getLogger(RestAccount.class);
+>>>>>>> parent of d588ed4 (Merge pull request #5 from huynq11019/Huy)
 	@Autowired
 	private AccountService accService;
 	@Autowired
 	private AccountMapper accountMapper;
 
-	@GetMapping("/admin/account/getlist")
+	@GetMapping("/getlist")
 	public ResponseEntity<List<AccountDTO>> getAll() {
 		System.err.println("đã kết nối");
-//		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
-//				.collect(Collectors.toList());
+		List<AccountDTO> listOut = accService.getListUser().stream().map(accountMapper::toDto)
+				.collect(Collectors.toList());
 //		return ResponseEntity.ok(accService.getListUser());
-		try {
-			List<AccountDTO> listOut = accountMapper.toListDto(accService.getListUser());
-			_log.info("đã load danh sách user");
-			return ResponseEntity.status(HttpStatus.OK).body(listOut);
-
-		} catch (Exception e) {
-			System.out.println("loi");
-			e.printStackTrace();
-		}
-		return null;
+		_log.info("đã load danh sách user");
+		return ResponseEntity.status(HttpStatus.OK).body(listOut);
 	}
 
-	@PostMapping("/register")
-	public ResponseEntity<AccountDTO> createAccount(@Valid @RequestBody AccountDTO acc) {
+	@PostMapping("/create")
+	public ResponseEntity<Account> createAccount(@Valid @RequestBody AccountDTO acc) {
 //		System.out.println("account is validate");
-		_log.debug("account validated:" + acc.toString());
-
+		_log.debug("account đã được validate");
+		System.out.println(acc);
 		Account account = accountMapper.toEntity(acc);
 		Account accSaved = accService.createUser(account);
-		AccountDTO accountDTO = accountMapper.toDto(accSaved);
-		accountDTO.setPassword("password này đã được mã hóa");
-		return ResponseEntity.ok(accountDTO);
+		return ResponseEntity.ok(accSaved);
 	}
 
-	@PutMapping("/admin/account/update")
+	@PutMapping("/update")
 	public ResponseEntity<Boolean> updateAccount(@Valid @RequestBody AccountDTO accDTO) {
 		try {
-			
-			if (accDTO.getId() == null) {
-				_log.warn("Account di không được để null");
-				return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(false);
-				
-			}
 			Account account = accountMapper.toEntity(accDTO);
-			_log.info(account);
 			accService.update(account);
 			_log.info("Thực hiện udpate thành công");
 			return ResponseEntity.ok(true);

@@ -16,13 +16,12 @@ public class MyExceptionHander {
 	/*
 	 * Tất cả các exception kong được khai báo sẽ được sửa lý tại đây
 	 */
-//	@ExceptionHandler(Exception.class)
-//	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
-//	public ExceptionMessage handerAllException(Exception ex, WebRequest request) {
-//		
-//		return new ExceptionMessage(500, ex.getMessage());
-//	}
-//	
+	@ExceptionHandler(Exception.class)
+	@ResponseStatus(value = HttpStatus.INTERNAL_SERVER_ERROR)
+	public ExceptionMessage handerAllException(Exception ex, WebRequest request) {
+		return new ExceptionMessage(500, ex.getMessage());
+	}
+	
 	  /**
      * IndexOutOfBoundsException sẽ được xử lý riêng tại đây
      */
