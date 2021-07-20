@@ -1,5 +1,10 @@
 package com.TTS.Service;
 
-public interface CategoriesService {
+import com.TTS.Entity.Category;
+
+import java.util.List;
+
+public interface CategoriesService extends  AuditService<Category,Integer> {
+    public List<Category> loadAll();
 
 }
