@@ -7,7 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.MultiValueMap;
 
-import com.TTS.DTO.AccountDTO;
 import com.TTS.Entity.Account;
 
 public interface AccountService {
@@ -31,7 +30,6 @@ public interface AccountService {
 	Account update(Account acc);
 
 	Account selfUpdate(Account acc);
-
 
 	Long countActiveAccount();
 

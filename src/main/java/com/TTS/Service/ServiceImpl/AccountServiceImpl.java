@@ -1,43 +1,44 @@
 package com.TTS.Service.ServiceImpl;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import com.TTS.Entity.Account;
+import com.TTS.Entity.Authrority;
+import com.TTS.Repo.AccountRepo;
+import com.TTS.Service.AccountService;
+import com.TTS.Util.ParamUtil;
+import com.TTS.Util.Validator;
+import com.TTS.sercurity.JWT.TokenPovider;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.domain.Sort;
 import org.springframework.data.domain.Sort.Direction;
-import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.util.MultiValueMap;
 
-import com.TTS.DTO.AccountDTO;
-import com.TTS.Entity.Account;
-import com.TTS.Entity.Authrority;
-import com.TTS.Repo.AccountRepo;
-import com.TTS.Service.AccountService;
-import com.TTS.Util.Validator;
-import com.google.common.collect.ImmutableSortedSet;
+import javax.transaction.Transactional;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
 
-import lombok.extern.slf4j.Slf4j;
+//import org.apache.log4j.Logger;
 
 @Service
 @Transactional
-
+@Slf4j
 public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private AccountRepo accountRepo;
 	@Autowired
-	PasswordEncoder passwordEncoder;
-	private final static Logger _log = LoggerFactory.getLogger(AccountService.class);
+	private PasswordEncoder passwordEncoder;
+	@Autowired
+	private ParamUtil param;
+	@Autowired
+	private TokenPovider jwtPovider;
+//	private final static Logger _log = LoggerFactory.getLogger(AccountService.class);
+//	private final Logger _log = Logger.getLogger(RequestFilter.class);
 
 	@Override
 	public Account createUser(Account acc) {
@@ -57,31 +58,44 @@ public class AccountServiceImpl implements AccountService {
 						}
 
 					});
-			_log.info("đã tạo một acocunt mới");
+			log.info("đã tạo một acocunt mới");
 			System.out.println(acc);
 			return accountRepo.save(acc);
 		}
-		_log.warn("thông tin tạo user không thành công vì id khác null");
+		log.warn("thông tin tạo user không thành công vì id khác null");
 		return null;
 	}
 
 	@Override
 	public Account getCurrentUser() {
-		// lấy thoogn tin quan email
-		// TODO Auto-generated method stub
-		return null;
+//lấy thông tin user qua accesstoken 
+
+		Integer id = param.getAccountId();
+		//
+		Account curentAccount = accountRepo.findById(id).get();
+//		log.info(curentAccount.toString());
+		return curentAccount;
 	}
 
 	@Override
 	public Optional<Account> findOne(Integer id) {
-		// TODO Auto-generated method stub
+		if (!accountRepo.existsById(id)) {
+			log.warn("lỗi tìm kiếm: id không tồn tại");
+			return null;
+		}
+		log.info("đã tìm được user có id là" + id);
 		return accountRepo.findById(id);
 	}
 
 	@Override
 	public Optional<Account> findByEmail(String email) {
-		// TODO Auto-generated method stub
-		return accountRepo.findByEmail(email);
+		Optional<Account> acc = accountRepo.findByEmail(email);
+		if (acc == null) {
+			log.warn("lỗi tìm kiếm: email không tồn tại");
+			return null;
+		}
+//		log.info("đã tìm được user có email là" + email);
+		return acc;
 	}
 
 	@Override
@@ -99,12 +113,11 @@ public class AccountServiceImpl implements AccountService {
 	@Override
 	public List<Account> getListUser() {
 		return accountRepo.findAll();
-//		return null;
 	}
 
 	@Override
 	public Account update(Account acc) {
-		if (acc.getId()== null) {
+		if (acc.getId() == null) {
 			return null;
 		}
 		Account account = accountRepo.findById(acc.getId())
@@ -121,14 +134,19 @@ public class AccountServiceImpl implements AccountService {
 //	}
 	@Override
 	public Account selfUpdate(Account acc) {
-		// TODO Auto-generated method stub
+		// kiểm tra có phải đang người dùng đang tự uodate không
+		Integer idAccountUpdate = acc.getId();
+		Integer idAccesstoken = param.getAccountId();
+		if(idAccesstoken.equals(idAccountUpdate)) {
+			this.update(acc);
+		}
+
 		return null;
 	}
 
-
 	@Override
 	public Long countActiveAccount() {
-		// 
+		//
 		return null;
 	}
 
@@ -156,11 +174,10 @@ public class AccountServiceImpl implements AccountService {
 		if (order) {
 			directtion = Direction.ASC;
 		}
-		Sort sort = Sort.by(directtion,sortBy);
+		Sort sort = Sort.by(directtion, sortBy);
 		Pageable paging = PageRequest.of(page, limit, sort);
 		return accountRepo.findAll(paging).getContent();
-		
-		
+
 //		return null;
 	}
 

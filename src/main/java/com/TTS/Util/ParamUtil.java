@@ -10,9 +10,15 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
+
+import com.TTS.sercurity.CustomUserDetail;
+import com.TTS.sercurity.JWT.JWTtoken;
+import com.TTS.sercurity.JWT.TokenPovider;
+
 @Component
 public class ParamUtil {
 	@Autowired
@@ -21,8 +27,8 @@ public class ParamUtil {
 	private HttpServletResponse response;
 	@Autowired
 	private ServletContext context;
-
-
+	@Autowired
+	private TokenPovider jwtPovider;
 
 	/**
 	 * Đọc chuỗi giá trị của tham số
@@ -106,16 +112,17 @@ public class ParamUtil {
 			return null;
 		}
 	}
+
 	public String dateToString(Date date, String panter) {
-	try {
-		SimpleDateFormat formater = new SimpleDateFormat(panter);
-		String dateString  = formater.format(date);
-		return dateString;
-	} catch (Exception e) {
-		// TODO: handle exception
-		e.printStackTrace();
-	}
-		
+		try {
+			SimpleDateFormat formater = new SimpleDateFormat(panter);
+			String dateString = formater.format(date);
+			return dateString;
+		} catch (Exception e) {
+			// TODO: handle exception
+			e.printStackTrace();
+		}
+
 		return null;
 	}
 
@@ -133,10 +140,16 @@ public class ParamUtil {
 
 	public String getTokenFormRequest() {
 		String token = request.getHeader("Authorization");
-		if(StringUtils.hasText(token) && token.startsWith("bruh")) {
+		if (StringUtils.hasText(token) && token.startsWith("bruh")) {
 			return token.substring(5);
 		}
-		
+
 		return null;
+	}
+
+	public Integer getAccountId() {
+		String token = this.getTokenFormRequest();
+		CustomUserDetail auth = (CustomUserDetail) jwtPovider.getUserFormToken(token).getPrincipal();
+		return auth.getIdAccount();
 	}
 }
