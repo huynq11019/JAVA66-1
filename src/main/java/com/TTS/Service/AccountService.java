@@ -25,12 +25,13 @@ public interface AccountService {
 	Optional<Account> getUserWithAuthorities();
 
 	List<Account> getListUser();
+	
 	List<Account> getPage(int page, int limit, String sortBy, boolean order);
+	
 	Account update(Account acc);
 
 	Account selfUpdate(Account acc);
 
-	Account updateByMobile(Account acc);
 
 	Long countActiveAccount();
 
