@@ -4084,3 +4084,685 @@ Caused by: java.sql.SQLIntegrityConstraintViolationException: Column 'password_h
 [2021-07-15T08:51:49.049Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [51] [INFO ] đã load danh sách user
 [2021-07-15T08:52:04.004Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-4] [51] [INFO ] đã load danh sách user
 [2021-07-15T08:52:07.007Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-5] [51] [INFO ] đã load danh sách user
+[2021-07-16T17:27:33.033Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [30] [DEBUG] user login progress
+[2021-07-16T17:27:33.033Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [39] [DEBUG] genarate token fromvosong9201@gmail.comid: 22
+[2021-07-16T17:31:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-6] [30] [DEBUG] user login progress
+[2021-07-16T17:31:54.054Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-6] [39] [DEBUG] genarate token fromvosong9201@gmail.comid: 22
+[2021-07-16T21:30:02.002Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-6] [68] [DEBUG] account validated:AccountDTO(id=null, fullName=đỗ quang huy, password=1234567890, description=không phải huy, phoneNumber=0925573154, status=0, DOB=2001-12-03T04:53:49Z, email=lala@gmail.com, authrority=[ADMIN, USER], orderString=[])
+[2021-07-16T21:30:03.003Z] [com.TTS.Service.ServiceImpl.AccountServiceImpl] [http-nio-8099-exec-6] [64] [INFO ] đã tạo một acocunt mới
+[2021-07-16T21:30:45.045Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-8] [30] [DEBUG] user login progress
+[2021-07-16T21:30:45.045Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-8] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-16T21:34:25.025Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-10] [68] [DEBUG] account validated:AccountDTO(id=null, fullName=đỗ quang huy, password=1234567890, description=không phải huy, phoneNumber=0925573154, status=0, DOB=2001-12-03T04:53:49Z, email=lala@gmail.com, authrority=[ADMIN, USER], orderString=[])
+[2021-07-16T21:34:25.025Z] [com.TTS.Service.ServiceImpl.AccountServiceImpl] [http-nio-8099-exec-10] [64] [INFO ] đã tạo một acocunt mới
+[2021-07-16T21:38:06.006Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-2] [51] [INFO ] đã load danh sách user
+[2021-07-16T21:38:45.045Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-3] [106] [ERROR] lỗi mapping DTO
+java.lang.IllegalArgumentException: JWT String argument cannot be null or empty.
+	at io.jsonwebtoken.lang.Assert.hasText(Assert.java:135)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:479)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541)
+	at com.TTS.sercurity.JWT.TokenPovider.getUserFormToken(TokenPovider.java:60)
+	at com.TTS.Util.ParamUtil.getAccountId(ParamUtil.java:152)
+	at com.TTS.Service.ServiceImpl.AccountServiceImpl.getCurrentUser(AccountServiceImpl.java:76)
+	at com.TTS.Service.ServiceImpl.AccountServiceImpl$$FastClassBySpringCGLIB$$218b7be2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at com.TTS.Service.ServiceImpl.AccountServiceImpl$$EnhancerBySpringCGLIB$$4c619eb3.getCurrentUser(<generated>)
+	at com.TTS.Rest.RestAccount.getInforByaccessToken(RestAccount.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at com.TTS.sercurity.RequestFilter.doFilterInternal(RequestFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+[2021-07-16T21:39:13.013Z] [com.TTS.Rest.RestAccount] [http-nio-8099-exec-6] [106] [ERROR] lỗi mapping DTO
+java.lang.IllegalArgumentException: JWT String argument cannot be null or empty.
+	at io.jsonwebtoken.lang.Assert.hasText(Assert.java:135)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parse(DefaultJwtParser.java:479)
+	at io.jsonwebtoken.impl.DefaultJwtParser.parseClaimsJws(DefaultJwtParser.java:541)
+	at com.TTS.sercurity.JWT.TokenPovider.getUserFormToken(TokenPovider.java:60)
+	at com.TTS.Util.ParamUtil.getAccountId(ParamUtil.java:152)
+	at com.TTS.Service.ServiceImpl.AccountServiceImpl.getCurrentUser(AccountServiceImpl.java:76)
+	at com.TTS.Service.ServiceImpl.AccountServiceImpl$$FastClassBySpringCGLIB$$218b7be2.invoke(<generated>)
+	at org.springframework.cglib.proxy.MethodProxy.invoke(MethodProxy.java:218)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.invokeJoinpoint(CglibAopProxy.java:779)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:163)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.transaction.interceptor.TransactionAspectSupport.invokeWithinTransaction(TransactionAspectSupport.java:367)
+	at org.springframework.transaction.interceptor.TransactionInterceptor.invoke(TransactionInterceptor.java:118)
+	at org.springframework.aop.framework.ReflectiveMethodInvocation.proceed(ReflectiveMethodInvocation.java:186)
+	at org.springframework.aop.framework.CglibAopProxy$CglibMethodInvocation.proceed(CglibAopProxy.java:750)
+	at org.springframework.aop.framework.CglibAopProxy$DynamicAdvisedInterceptor.intercept(CglibAopProxy.java:692)
+	at com.TTS.Service.ServiceImpl.AccountServiceImpl$$EnhancerBySpringCGLIB$$4c619eb3.getCurrentUser(<generated>)
+	at com.TTS.Rest.RestAccount.getInforByaccessToken(RestAccount.java:102)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:64)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:564)
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:190)
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:138)
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:105)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:878)
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:792)
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87)
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1040)
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:943)
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1006)
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:898)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:626)
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:883)
+	at javax.servlet.http.HttpServlet.service(HttpServlet.java:733)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:227)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:53)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:113)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:320)
+	at org.springframework.security.web.access.ExceptionTranslationFilter.doFilter(ExceptionTranslationFilter.java:118)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.session.SessionManagementFilter.doFilter(SessionManagementFilter.java:137)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.AnonymousAuthenticationFilter.doFilter(AnonymousAuthenticationFilter.java:111)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.servletapi.SecurityContextHolderAwareRequestFilter.doFilter(SecurityContextHolderAwareRequestFilter.java:158)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.savedrequest.RequestCacheAwareFilter.doFilter(RequestCacheAwareFilter.java:63)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at com.TTS.sercurity.RequestFilter.doFilterInternal(RequestFilter.java:45)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.authentication.logout.LogoutFilter.doFilter(LogoutFilter.java:116)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.web.filter.CorsFilter.doFilterInternal(CorsFilter.java:92)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.header.HeaderWriterFilter.doHeadersAfter(HeaderWriterFilter.java:92)
+	at org.springframework.security.web.header.HeaderWriterFilter.doFilterInternal(HeaderWriterFilter.java:77)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.SecurityContextPersistenceFilter.doFilter(SecurityContextPersistenceFilter.java:105)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.context.request.async.WebAsyncManagerIntegrationFilter.doFilterInternal(WebAsyncManagerIntegrationFilter.java:56)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.springframework.security.web.FilterChainProxy$VirtualFilterChain.doFilter(FilterChainProxy.java:334)
+	at org.springframework.security.web.FilterChainProxy.doFilterInternal(FilterChainProxy.java:215)
+	at org.springframework.security.web.FilterChainProxy.doFilter(FilterChainProxy.java:178)
+	at org.springframework.web.filter.DelegatingFilterProxy.invokeDelegate(DelegatingFilterProxy.java:358)
+	at org.springframework.web.filter.DelegatingFilterProxy.doFilter(DelegatingFilterProxy.java:271)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:119)
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:189)
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:162)
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:202)
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:97)
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:542)
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:143)
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:92)
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:78)
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:357)
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:374)
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:65)
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:893)
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1707)
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:49)
+	at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1130)
+	at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:630)
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:61)
+	at java.base/java.lang.Thread.run(Thread.java:832)
+[2021-07-16T21:39:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-7] [38] [INFO ] true
+[2021-07-16T21:39:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-7] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:39:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:39:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-7] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:39:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:42:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T21:42:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:42:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:44:29.029Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-16T21:44:29.029Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:44:29.029Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:45:44.044Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T21:45:44.044Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:45:45.045Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:47:02.002Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T21:47:02.002Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:47:02.002Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:50:13.013Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T21:50:13.013Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:50:13.013Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:51:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-16T21:51:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:51:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:53:36.036Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T21:53:36.036Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:53:36.036Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:58:35.035Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T21:58:35.035Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:58:35.035Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:58:43.043Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-16T21:58:43.043Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:58:43.043Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T21:59:57.057Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-16T21:59:57.057Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T21:59:57.057Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:00:17.017Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T22:00:17.017Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:00:17.017Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:00:51.051Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T22:00:51.051Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:00:51.051Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:00:51.051Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [22] [DEBUG] hello
+[2021-07-16T22:01:16.016Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-16T22:01:16.016Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:01:16.016Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:01:16.016Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [25] [DEBUG] hello
+[2021-07-16T22:04:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-16T22:04:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:04:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:04:21.021Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [79] [DEBUG] huy ddep trai
+[2021-07-16T22:04:21.021Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [26] [DEBUG] hello
+[2021-07-16T22:07:10.010Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-16T22:07:10.010Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:07:10.010Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:07:11.011Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [79] [DEBUG] huy ddep trai
+[2021-07-16T22:09:20.020Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-16T22:09:20.020Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:09:20.020Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:09:20.020Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [79] [DEBUG] huy ddep trai
+[2021-07-16T22:10:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-16T22:10:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-16T22:10:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-16T22:10:53.053Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [79] [DEBUG] huy ddep trai
+[2021-07-17T00:20:34.034Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T00:20:34.034Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T00:20:35.035Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T00:20:35.035Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [79] [DEBUG] huy ddep trai
+[2021-07-17T00:30:35.035Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T00:30:35.035Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T00:30:36.036Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T00:30:36.036Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [79] [DEBUG] huy ddep trai
+[2021-07-17T09:13:42.042Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [80] [DEBUG] huy ddep trai
+[2021-07-17T09:17:43.043Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T09:17:43.043Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:17:44.044Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:17:44.044Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-4] [80] [DEBUG] huy ddep trai
+[2021-07-17T09:22:45.045Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [83] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:24:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [30] [DEBUG] user login progress
+[2021-07-17T09:24:08.008Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-17T09:24:33.033Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-5] [83] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:24:54.054Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-7] [38] [INFO ] true
+[2021-07-17T09:24:54.054Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-7] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:24:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:24:54.054Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-7] [83] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:24:54.054Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-7] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:24:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:32:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-9] [38] [INFO ] true
+[2021-07-17T09:32:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-9] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:32:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-9] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:32:22.022Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-9] [83] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:32:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-9] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:32:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-9] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:34:32.032Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:34:32.032Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:34:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:34:32.032Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:34:33.033Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:34:33.033Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:37:01.001Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:37:01.001Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:37:01.001Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:37:01.001Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:37:01.001Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:37:01.001Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:38:06.006Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:38:06.006Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:38:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:38:07.007Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:38:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:38:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:43:19.019Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T09:43:19.019Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:43:19.019Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:43:19.019Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-4] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:43:19.019Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:43:19.019Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:44:11.011Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T09:44:11.011Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:44:11.011Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:44:11.011Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:44:11.011Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:44:11.011Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:47:23.023Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T09:47:23.023Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:47:23.023Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:47:23.023Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-4] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:47:23.023Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:47:23.023Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:50:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T09:50:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:50:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:50:22.022Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:50:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:50:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:50:22.022Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [46] [INFO ] loi them san pham
+[2021-07-17T09:51:41.041Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T09:51:41.041Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:51:41.041Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:51:41.041Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-4] [85] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:51:41.041Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:51:41.041Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:51:41.041Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-4] [46] [INFO ] loi them san pham
+[2021-07-17T09:52:23.023Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:52:23.023Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:52:24.024Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:52:24.024Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [86] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:52:24.024Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:52:24.024Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:52:24.024Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [46] [INFO ] loi them san pham
+[2021-07-17T09:53:19.019Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:53:19.019Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:53:19.019Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:53:19.019Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [86] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:53:19.019Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:53:19.019Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:53:20.020Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [46] [INFO ] loi them san pham
+[2021-07-17T09:54:05.005Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:54:05.005Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:54:05.005Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:54:06.006Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [86] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:54:06.006Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:54:06.006Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:54:06.006Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [46] [INFO ] loi them san pham
+[2021-07-17T09:54:54.054Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T09:54:54.054Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:54:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:54:54.054Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [86] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:54:54.054Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:54:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:54:54.054Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [46] [INFO ] loi them san pham
+[2021-07-17T09:56:32.032Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T09:56:32.032Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:56:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T09:56:32.032Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [86] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T09:56:32.032Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T09:56:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:00:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:00:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:00:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:00:53.053Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [86] [INFO ] ProductDTO(id=null, nameProduct=Huy dep trai, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:00:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:00:53.053Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:01:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T10:01:40.040Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:01:40.040Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:01:40.040Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-4] [86] [INFO ] ProductDTO(id=null, nameProduct=Iphone 12 Product, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:01:40.040Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:01:40.040Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:07:41.041Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-6] [38] [INFO ] true
+[2021-07-17T10:07:41.041Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-6] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:07:42.042Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-6] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:07:50.050Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-8] [38] [INFO ] true
+[2021-07-17T10:07:50.050Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-8] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:07:50.050Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-8] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:08:39.039Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-10] [38] [INFO ] true
+[2021-07-17T10:08:39.039Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-10] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:08:39.039Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-10] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:08:39.039Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-10] [86] [INFO ] ProductDTO(id=null, nameProduct=Iphone 12 Product, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:08:39.039Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-10] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:08:39.039Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-10] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:12:53.053Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T10:12:53.053Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:12:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:12:54.054Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [86] [INFO ] ProductDTO(id=null, nameProduct=Iphone 12 iphone3, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:12:54.054Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:12:54.054Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:15:09.009Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:15:09.009Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:15:09.009Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:15:09.009Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [86] [INFO ] ProductDTO(id=null, nameProduct=Iphone 12 iphone3, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:21:27.027Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:21:27.027Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:21:27.027Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:21:27.027Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [86] [INFO ] ProductDTO(id=null, nameProduct=Iphone 12 iphone3, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:21:27.027Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:21:27.027Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:21:38.038Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T10:21:38.038Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:21:38.038Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:21:38.038Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-4] [86] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang Huy, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:21:38.038Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:21:38.038Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:26:07.007Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:26:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:26:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:26:07.007Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang Huy, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:26:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:26:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:31:07.007Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T10:31:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:31:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:31:07.007Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang Huy, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:31:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:31:08.008Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:31:22.022Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-17T10:31:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:31:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:31:22.022Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-3] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang 12313, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:31:22.022Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:31:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:40:47.047Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:40:47.047Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:40:47.047Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:40:47.047Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang 12313, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:41:42.042Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-5] [38] [INFO ] true
+[2021-07-17T10:41:42.042Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-5] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:41:42.042Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:41:42.042Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-5] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang 12313, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:42:47.047Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T10:42:47.047Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:42:47.047Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:42:47.047Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-1] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang 12313, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:42:48.048Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:42:48.048Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:47:28.028Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:47:28.028Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:47:28.028Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:47:28.028Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang 12313, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:47:28.028Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:47:28.028Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:47:29.029Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [102] [ERROR] đối tượng đã tồn tại trong hệ thống
+[2021-07-17T10:51:14.014Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:51:14.014Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:51:15.015Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:51:15.015Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [90] [INFO ] ProductDTO(id=null, nameProduct=nguyenquang 12313, image=noimage, realPrice=199.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:51:15.015Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:51:15.015Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:52:23.023Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-17T10:52:23.023Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:52:23.023Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:52:23.023Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-3] [90] [INFO ] ProductDTO(id=null, nameProduct=nhuy pro , image=noimage, realPrice=112399.0, discount=5.0, quantity=101, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:52:23.023Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:52:23.023Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:55:47.047Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T10:55:47.047Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:55:48.048Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T10:55:48.048Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [90] [INFO ] ProductDTO(id=null, nameProduct=găng tay  , image=noimage, realPrice=112399.0, discount=21.0, quantity=1, description=sản phẩm hữu ích, category=null)
+[2021-07-17T10:55:48.048Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T10:55:48.048Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:06:57.057Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T11:06:57.057Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:06:58.058Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:06:58.058Z] [com.TTS.Rest.RestProduct] [http-nio-8099-exec-2] [90] [INFO ] ProductDTO(id=null, nameProduct=Kingtexx  , image=khong co, realPrice=112399.0, discount=21.0, quantity=1, description=sản phẩm hữu ích, category=null)
+[2021-07-17T11:07:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:07:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:08:01.001Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-4] [38] [INFO ] true
+[2021-07-17T11:08:01.001Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:08:02.002Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:08:02.002Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-4] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:08:35.035Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-17T11:08:35.035Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:08:35.035Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:09:49.049Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T11:09:49.049Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:09:49.049Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:09:49.049Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:10:17.017Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T11:10:17.017Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:10:17.017Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:10:17.017Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:12:16.016Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-5] [38] [INFO ] true
+[2021-07-17T11:12:16.016Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-5] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:12:17.017Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:12:17.017Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:12:48.048Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T11:12:48.048Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:12:48.048Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:12:48.048Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:14:18.018Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T11:14:18.018Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:14:18.018Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:14:18.018Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:15:31.031Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T11:15:31.031Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:15:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:15:32.032Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:20:07.007Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-17T11:20:07.007Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:20:07.007Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:20:07.007Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-3] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:20:50.050Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T11:20:50.050Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:20:50.050Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:20:50.050Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:24:40.040Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-2] [38] [INFO ] true
+[2021-07-17T11:24:40.040Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:24:41.041Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:24:41.041Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:26:14.014Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T11:26:14.014Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:26:14.014Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:26:14.014Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:26:58.058Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-17T11:26:58.058Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:26:58.058Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:26:58.058Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-3] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:39:32.032Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-17T11:39:32.032Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:39:33.033Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:39:33.033Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-17T11:43:49.049Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-5] [38] [INFO ] true
+[2021-07-17T11:43:49.049Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-5] [66] [INFO ] [USER, ADMIN]
+[2021-07-17T11:43:49.049Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [40] [INFO ] đang load user detail từ accountID
+[2021-07-17T11:43:49.049Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-17T13:47:47.047Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [30] [DEBUG] user login progress
+[2021-07-17T13:47:47.047Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-5] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-17T13:48:02.002Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-6] [30] [DEBUG] user login progress
+[2021-07-17T13:48:02.002Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-6] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-17T13:51:38.038Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [30] [DEBUG] user login progress
+[2021-07-17T13:53:22.022Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-6] [30] [DEBUG] user login progress
+[2021-07-17T13:58:33.033Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [30] [DEBUG] user login progress
+[2021-07-17T13:58:33.033Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-5] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-17T13:59:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-8] [30] [DEBUG] user login progress
+[2021-07-17T13:59:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-9] [30] [DEBUG] user login progress
+[2021-07-17T13:59:32.032Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-8] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-17T13:59:32.032Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-9] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-17T13:59:34.034Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-10] [30] [DEBUG] user login progress
+[2021-07-17T13:59:34.034Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-10] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-18T00:05:48.048Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-2] [30] [DEBUG] user login progress
+[2021-07-18T00:05:48.048Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-2] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-18T01:39:05.005Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-18T01:39:29.029Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-4] [30] [DEBUG] user login progress
+[2021-07-18T01:39:29.029Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-4] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-18T01:39:50.050Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-5] [38] [INFO ] true
+[2021-07-18T01:39:50.050Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-5] [66] [INFO ] [USER, ADMIN]
+[2021-07-18T01:39:50.050Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-5] [40] [INFO ] đang load user detail từ accountID
+[2021-07-18T01:39:50.050Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-18T01:40:44.044Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-7] [38] [INFO ] true
+[2021-07-18T01:40:44.044Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-7] [66] [INFO ] [USER, ADMIN]
+[2021-07-18T01:40:44.044Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [40] [INFO ] đang load user detail từ accountID
+[2021-07-18T01:40:44.044Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-7] [82] [DEBUG] huy ddep trai
+[2021-07-18T01:42:21.021Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-18T01:42:21.021Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-18T01:42:21.021Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-18T01:42:21.021Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T01:42:28.028Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-3] [38] [INFO ] true
+[2021-07-18T01:42:28.028Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-3] [66] [INFO ] [USER, ADMIN]
+[2021-07-18T01:42:28.028Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-3] [40] [INFO ] đang load user detail từ accountID
+[2021-07-18T01:42:29.029Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-3] [82] [DEBUG] huy ddep trai
+[2021-07-18T01:46:38.038Z] [com.TTS.sercurity.RequestFilter] [http-nio-8099-exec-1] [38] [INFO ] true
+[2021-07-18T01:46:38.038Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [66] [INFO ] [USER, ADMIN]
+[2021-07-18T01:46:38.038Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [40] [INFO ] đang load user detail từ accountID
+[2021-07-18T01:46:38.038Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:03:45.045Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-10] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:04:14.014Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:04:53.053Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-6] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:05:19.019Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-4] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:05:33.033Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-7] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:05:34.034Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-8] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:06:25.025Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-9] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:06:28.028Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:06:36.036Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:08:28.028Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-10] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:08:30.030Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:08:51.051Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-6] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:09:14.014Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-4] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:10:47.047Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-8] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:11:06.006Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-9] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:11:27.027Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:15:09.009Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-3] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:15:45.045Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-10] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:16:01.001Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:16:36.036Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-6] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:16:45.045Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-4] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:17:47.047Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-8] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:20:22.022Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:21:04.004Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-2] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:21:35.035Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-3] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:22:08.008Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-10] [82] [DEBUG] huy ddep trai
+[2021-07-18T13:22:40.040Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-18T17:11:32.032Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-7] [30] [DEBUG] user login progress
+[2021-07-18T17:23:17.017Z] [com.TTS.sercurity.DomainUserDetailsService] [http-nio-8099-exec-1] [30] [DEBUG] user login progress
+[2021-07-18T17:23:17.017Z] [com.TTS.sercurity.JWT.TokenPovider] [http-nio-8099-exec-1] [39] [DEBUG] genarate token fromlala@gmail.comid: 1
+[2021-07-18T21:58:08.008Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T22:01:24.024Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-3] [82] [DEBUG] huy ddep trai
+[2021-07-18T22:06:17.017Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-6] [82] [DEBUG] huy ddep trai
+[2021-07-18T22:07:12.012Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-5] [82] [DEBUG] huy ddep trai
+[2021-07-18T22:18:26.026Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-8] [82] [DEBUG] huy ddep trai
+[2021-07-18T22:21:55.055Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-10] [82] [DEBUG] huy ddep trai
+[2021-07-18T22:22:04.004Z] [com.TTS.Service.ServiceImpl.ProductServiceImpl] [http-nio-8099-exec-1] [82] [DEBUG] huy ddep trai
+[2021-07-18T23:52:32.032Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [25] [INFO ] gelo
+[2021-07-18T23:52:38.038Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-9] [25] [INFO ] gelo
+[2021-07-18T23:54:02.002Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [25] [INFO ] gelo
+[2021-07-19T00:04:26.026Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-8] [31] [INFO ] hello
+[2021-07-19T00:05:50.050Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [32] [INFO ] hellovosong9201@gmail.com
+[2021-07-19T00:05:53.053Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [32] [INFO ] hellovosong9201@gmail.com
+[2021-07-19T00:05:56.056Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-4] [32] [INFO ] hello
+[2021-07-19T00:06:17.017Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [32] [INFO ] hellovosong9201@gmail.com1234567890
+[2021-07-19T00:06:17.017Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-3] [32] [INFO ] hellovosong9201@gmail.com1234567890
+[2021-07-19T09:14:16.016Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=1234567890)
+[2021-07-19T09:20:33.033Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-6] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=1234567890)
+[2021-07-19T09:21:14.014Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=1234567890)
+[2021-07-19T09:22:21.021Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-10] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=1234567890)
+[2021-07-19T09:27:43.043Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-8] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=1234567890)
+[2021-07-19T09:27:48.048Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-4] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123123)
+[2021-07-19T09:27:58.058Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-9] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123123)
+[2021-07-19T09:28:16.016Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123123)
+[2021-07-19T09:28:40.040Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-4] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123132)
+[2021-07-19T09:30:03.003Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-8] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=)
+[2021-07-19T09:30:03.003Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-9] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=)
+[2021-07-19T09:31:16.016Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123)
+[2021-07-19T09:32:20.020Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [27] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=)
+[2021-07-19T09:32:32.032Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-3] [27] [INFO ] RequestLogin(emailLogin=, password=)
+[2021-07-19T09:34:13.013Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [30] [INFO ] RequestLogin(emailLogin=, password=)
+[2021-07-19T09:35:22.022Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [30] [INFO ] RequestLogin(emailLogin=, password=)
+[2021-07-19T09:35:30.030Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-8] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123123)
+[2021-07-19T09:37:24.024Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-4] [30] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=1231231)
+[2021-07-19T09:39:09.009Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-2] [30] [INFO ] RequestLogin(emailLogin=lala@gmail.com, password=123123123123)
+[2021-07-19T09:39:17.017Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-10] [30] [INFO ] RequestLogin(emailLogin=lala@gmail.com, password=123123123123)
+[2021-07-19T09:44:57.057Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-3] [32] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=123123123)
+[2021-07-19T09:48:14.014Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-1] [33] [INFO ] RequestLogin(emailLogin=lala@gmail.com, password=123123123)
+[2021-07-19T09:48:20.020Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [33] [INFO ] RequestLogin(emailLogin=lala@gmail.com, password=123131)
+[2021-07-19T09:48:31.031Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-3] [33] [INFO ] RequestLogin(emailLogin=123123@g, password=123123)
+[2021-07-19T09:51:35.035Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [38] [INFO ] RequestLogin(emailLogin=lala@gmail.com, password=123123123)
+[2021-07-19T09:53:17.017Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-7] [38] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=23212)
+[2021-07-19T09:53:17.017Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-8] [38] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=23212)
+[2021-07-19T09:54:19.019Z] [com.TTS.Controller.LoginController] [http-nio-8099-exec-2] [38] [INFO ] RequestLogin(emailLogin=vosong9201@gmail.com, password=12312312313123)

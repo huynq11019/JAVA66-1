@@ -1,0 +1,7 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="/layout/layout::dynamic(~{::product})">
+<div th:fragment="product">
+    show danh sách sản phẩm
+    <!--/*@thymesVar id="user" type=""*/-->
+    <p th:text="${session.user}">thoogn tin người dùng</p>
+</div>
+</html>

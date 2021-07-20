@@ -1,11 +1,11 @@
 package com.TTS.Util;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 
 @Service
 public class CookieService {
@@ -56,7 +56,7 @@ public class CookieService {
 		Cookie cookies[] = request.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
-			System.out.println(	cookie.getValue());
+//			System.out.println(	cookie.getValue());
 				if (cookie.getName().equals(name)) {
 					return cookie.getValue();
 				}

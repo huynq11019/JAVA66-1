@@ -1,36 +1,33 @@
 package com.TTS.Service.ServiceImpl;
 
-import java.util.HashSet;
-import java.util.List;
-import java.util.Optional;
-
-import javax.transaction.Transactional;
-
-import org.apache.log4j.Logger;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.domain.Sort.Direction;
-import org.springframework.security.core.Authentication;
-import org.springframework.security.crypto.password.PasswordEncoder;
-import org.springframework.stereotype.Service;
-import org.springframework.util.MultiValueMap;
-
 import com.TTS.Entity.Account;
 import com.TTS.Entity.Authrority;
 import com.TTS.Repo.AccountRepo;
 import com.TTS.Service.AccountService;
 import com.TTS.Util.ParamUtil;
 import com.TTS.Util.Validator;
-import com.TTS.sercurity.CustomUserDetail;
-import com.TTS.sercurity.RequestFilter;
 import com.TTS.sercurity.JWT.TokenPovider;
+import lombok.extern.slf4j.Slf4j;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.domain.Sort.Direction;
+import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.stereotype.Service;
+import org.springframework.util.MultiValueMap;
+
+import javax.transaction.Transactional;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Optional;
+
+//import org.apache.log4j.Logger;
 
 @Service
 @Transactional
-
+@Slf4j
 public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private AccountRepo accountRepo;
@@ -41,7 +38,7 @@ public class AccountServiceImpl implements AccountService {
 	@Autowired
 	private TokenPovider jwtPovider;
 //	private final static Logger _log = LoggerFactory.getLogger(AccountService.class);
-	private final Logger _log = Logger.getLogger(RequestFilter.class);
+//	private final Logger _log = Logger.getLogger(RequestFilter.class);
 
 	@Override
 	public Account createUser(Account acc) {
@@ -61,11 +58,11 @@ public class AccountServiceImpl implements AccountService {
 						}
 
 					});
-			_log.info("đã tạo một acocunt mới");
+			log.info("đã tạo một acocunt mới");
 			System.out.println(acc);
 			return accountRepo.save(acc);
 		}
-		_log.warn("thông tin tạo user không thành công vì id khác null");
+		log.warn("thông tin tạo user không thành công vì id khác null");
 		return null;
 	}
 
@@ -76,28 +73,28 @@ public class AccountServiceImpl implements AccountService {
 		Integer id = param.getAccountId();
 		//
 		Account curentAccount = accountRepo.findById(id).get();
-//		_log.info(curentAccount.toString());
+//		log.info(curentAccount.toString());
 		return curentAccount;
 	}
 
 	@Override
 	public Optional<Account> findOne(Integer id) {
 		if (!accountRepo.existsById(id)) {
-			_log.warn("lỗi tìm kiếm: id không tồn tại");
+			log.warn("lỗi tìm kiếm: id không tồn tại");
 			return null;
 		}
-		_log.info("đã tìm được user có id là" + id);
+		log.info("đã tìm được user có id là" + id);
 		return accountRepo.findById(id);
 	}
 
 	@Override
 	public Optional<Account> findByEmail(String email) {
 		Optional<Account> acc = accountRepo.findByEmail(email);
-		if (acc. == null) {
-			_log.warn("lỗi tìm kiếm: email không tồn tại");
+		if (acc == null) {
+			log.warn("lỗi tìm kiếm: email không tồn tại");
 			return null;
 		}
-//		_log.info("đã tìm được user có email là" + email);
+//		log.info("đã tìm được user có email là" + email);
 		return acc;
 	}
 

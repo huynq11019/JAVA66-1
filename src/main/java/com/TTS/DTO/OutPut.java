@@ -17,4 +17,5 @@ public class OutPut<T> {
 	public int limit;
 	public String orderBy;
 	public boolean order;
+	public int emlementOfpage;
 }

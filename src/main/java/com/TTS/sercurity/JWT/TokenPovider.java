@@ -1,12 +1,11 @@
 package com.TTS.sercurity.JWT;
 
-import java.security.Key;
-import java.util.Arrays;
-import java.util.Date;
-import java.util.List;
-import java.util.stream.Collectors;
-
-import org.apache.log4j.Logger;
+import com.TTS.sercurity.CustomUserDetail;
+import com.TTS.sercurity.DomainUserDetailsService;
+import io.jsonwebtoken.Claims;
+import io.jsonwebtoken.Jwts;
+import io.jsonwebtoken.SignatureAlgorithm;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -15,16 +14,18 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Component;
 
-import com.TTS.sercurity.CustomUserDetail;
-import com.TTS.sercurity.DomainUserDetailsService;
+import java.security.Key;
+import java.util.Arrays;
+import java.util.Date;
+import java.util.List;
+import java.util.stream.Collectors;
 
-import io.jsonwebtoken.Claims;
-import io.jsonwebtoken.Jwts;
-import io.jsonwebtoken.SignatureAlgorithm;
+//import org.apache.log4j.Logger;
 
 @Component
+@Slf4j
 public class TokenPovider {
-	private final Logger _log = Logger.getLogger(DomainUserDetailsService.class);
+//	private final Logger _log = Logger.getLogger(DomainUserDetailsService.class);
 	// đoạn mã bảo mật ở phí serve
 	private String JWT_Serect = "java66lg";
 	// Thời gian có hiệu lực của chuỗi jwt
@@ -36,12 +37,13 @@ public class TokenPovider {
 
 	// tạo ra jwt từ thông tin user
 	public String createToken(CustomUserDetail userDetail) {
-		_log.debug("genarate token from" + userDetail.getUsername() +"id: "+ userDetail.getIdAccount());
+		log.debug("genarate token from" + userDetail.getUsername() +"id: "+ userDetail.getIdAccount());
 		Date now = new Date();
 		Date expiryDate = new Date(now.getTime() + JWT_EXPIRATION);
 		String authroriries = userDetail.getAuthorities().stream().map(GrantedAuthority::getAuthority)
 				.collect(Collectors.joining(","));
-		System.out.println("token provider" + authroriries);	
+//		System.out.println("token provider" + authroriries);
+		log.info("token provider" + authroriries);
 //		return Jwts.builder()
 //				.setSubject(Integer.toString(userDetail.getIdAccount()))
 //				.setIssuedAt(now)
@@ -63,7 +65,7 @@ public class TokenPovider {
 		//get authrority form tooken
 		List<GrantedAuthority> authrorities = Arrays.stream(claim.get("auth").toString().split(","))
 				.map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-		_log.info(authrorities);
+		log.info(authrorities.toString());
 		Integer accountId = Integer.parseInt(claim.getSubject());
 		UserDetails userdetail = userdetailservice.loadUserByID(accountId);
 		return new UsernamePasswordAuthenticationToken(userdetail, token, authrorities);
