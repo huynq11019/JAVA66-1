@@ -1,25 +1,17 @@
 package com.TTS.Entity;
 
-import java.io.Serializable;
-
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
-import javax.validation.constraints.Min;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import javax.persistence.*;
+import javax.validation.constraints.Min;
+import java.io.Serializable;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="oderdetails")
+@Table(name="orderdetails")
 public class OrderDetail extends SuperClass implements Serializable {
 	/**
 	 * 

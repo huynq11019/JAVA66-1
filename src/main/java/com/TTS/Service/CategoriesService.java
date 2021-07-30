@@ -7,4 +7,5 @@ import java.util.List;
 public interface CategoriesService extends  AuditService<Category,Integer> {
     public List<Category> loadAll();
 
+
 }

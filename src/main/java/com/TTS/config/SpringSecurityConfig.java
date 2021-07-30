@@ -1,5 +1,9 @@
 package com.TTS.config;
 
+import com.TTS.sercurity.DomainUserDetailsService;
+import com.TTS.sercurity.RequestFilter;
+import com.google.common.collect.ImmutableList;
+import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.http.HttpMethod;
@@ -19,11 +23,6 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.CorsConfigurationSource;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 
-import com.TTS.sercurity.DomainUserDetailsService;
-import com.TTS.sercurity.RequestFilter;
-import com.google.common.collect.ImmutableList;
-
-import lombok.RequiredArgsConstructor;
 @EnableWebSecurity
 @RequiredArgsConstructor
 @EnableGlobalMethodSecurity(prePostEnabled = true, securedEnabled = true)
@@ -34,15 +33,12 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	private RequestFilter requestFillter;
 	@Autowired
 	private JWTentrypoin jwtEntripoin;
-	private static final String[] IGNOR_URLS = { "/app/**/*.{js,html}", "/i18n/**", "/content/**",
+	private static final String[] IGNOR_URLS = { "/img/*.{png,html,jpa,svg,}", "/i18n/**", "/content/**",
 			"/swagger-ui/index.html", "/test/**" };
 	private static final String[] PUBLIC_URL = { "/api/authenticate", "/api/register", "/api/forgotpassword", };
-	
-	private static final String[] AUTHENTICATED_URLS = { "/api/**" };
-	
-	
 
-	 
+	private static final String[] AUTHENTICATED_URLS = { "/api/**" };
+
 	@Bean
 	public PasswordEncoder passwordEncoder() {
 		return new BCryptPasswordEncoder();
@@ -62,21 +58,21 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		return super.authenticationManagerBean();
 	}
 	  // To enable CORS
-//    @Bean
-//    public CorsConfigurationSource corsConfigurationSource() {
-//        final CorsConfiguration configuration = new CorsConfiguration();
-//
-//        configuration.setAllowedOrigins(ImmutableList.of("*")); // www - obligatory
-//        configuration.setAllowedOrigins(ImmutableList.of("*"));  //set access from all domains
-//        configuration.setAllowedMethods(ImmutableList.of("GET", "POST", "PUT", "DELETE"));
-//        configuration.setAllowCredentials(true);
-//        configuration.setAllowedHeaders(ImmutableList.of("X-PINGOTHER","Authorization", "Cache-Control", "Content-Type"));
-//
-//        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-//        source.registerCorsConfiguration("/**", configuration);
-//
-//        return source;
-//    }
+    @Bean
+    public CorsConfigurationSource corsConfigurationSource() {
+        final CorsConfiguration configuration = new CorsConfiguration();
+
+        configuration.setAllowedOrigins(ImmutableList.of("*")); // www - obligatory
+        configuration.setAllowedOrigins(ImmutableList.of("*"));  //set access from all domains
+        configuration.setAllowedMethods(ImmutableList.of("GET", "POST", "PUT", "DELETE"));
+        configuration.setAllowCredentials(true);
+        configuration.setAllowedHeaders(ImmutableList.of("X-PINGOTHER","Authorization", "Cache-Control", "Content-Type"));
+
+        final UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+        source.registerCorsConfiguration("/**", configuration);
+
+        return source;
+    }
 	@Override
 	public void configure(WebSecurity web) throws Exception {
 		web.ignoring().antMatchers(HttpMethod.OPTIONS, "/**").antMatchers(IGNOR_URLS);
@@ -100,9 +96,13 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
               .frameOptions()
               .deny();
 //		// Thực hiện xác thực với những request
-//		httpSecurity.authorizeRequests().antMatchers("/api/admin/**").hasAnyAuthority("ADMIN").antMatchers(PUBLIC_URL)
-//				.permitAll().antMatchers("/api/**").authenticated().anyRequest().permitAll();
-//		// xử lý exception
+		httpSecurity.authorizeRequests().antMatchers("/api/admin/**").hasAnyAuthority("ADMIN")
+				.antMatchers(PUBLIC_URL).permitAll()
+				.antMatchers("/api/**").authenticated()
+				.anyRequest().permitAll();
+		// xử lý exception
+//		httpSecurity.formLogin().loginPage("/logind");
+		// xử lý login form
 		httpSecurity.exceptionHandling().authenticationEntryPoint(jwtEntripoin).and().sessionManagement()
 				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 		// thêm fillter để validate tokens với mọi request

@@ -8,7 +8,6 @@ import com.TTS.maper.AccountMapper;
 import io.swagger.annotations.ApiOperation;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -44,10 +43,10 @@ public class RestAccount {
 			List<AccountDTO> listOut = accountMapper.toListDto(accService.getListUser());
 			log.info("đã load danh sách user");
 			
-			 HttpHeaders responseHeaders = new HttpHeaders();
-			 responseHeaders.add(HttpHeaders.SET_COOKIE, "12345678909gbhuujn n  ");
-			cookieService.add("user", "123432423467890", 2,false);
-			return ResponseEntity.status(HttpStatus.OK).headers(responseHeaders).body(listOut);
+//			 HttpHeaders responseHeaders = new HttpHeaders();
+//			 responseHeaders.add(HttpHeaders.SET_COOKIE, "12345678909gbhuujn n  ");
+//			cookieService.add("user", "123432423467890", 2,false);
+			return ResponseEntity.status(HttpStatus.OK).body(listOut);
 
 		} catch (Exception e) {
 			System.out.println("loi");

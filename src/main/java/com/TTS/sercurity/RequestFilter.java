@@ -31,14 +31,16 @@ public class RequestFilter extends OncePerRequestFilter {
 	@Override
 	protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
 			throws ServletException, IOException {
-	String cookieValue =	cookie.getvalue("accesstoken");
-//		log.info(cookieValue);
+	String cookieValue =	cookie.getvalue("accesstokenHTTP");//  use for controller
+	String headerValue = param.getTokenFormRequest(); // for controller
+		log.info(cookieValue);
+		log.info(headerValue);
 		try {
 //			String token = param.getTokenFormRequest();
-			String token = cookieValue;
+			String token = cookieValue == null? headerValue: cookieValue;
 //			_log.info("token"+token);
 			if (StringUtils.hasText(token) && jwtTokenProvider.validateToken(token)) {
-				log.info(String.valueOf(jwtTokenProvider.validateToken(token)));
+//				log.info(String.valueOf(jwtTokenProvider.validateToken(token)));
 			    Authentication authentication = jwtTokenProvider.getUserFormToken(token);
 				SecurityContextHolder.getContext().setAuthentication(authentication);
 			}

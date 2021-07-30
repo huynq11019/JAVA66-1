@@ -1,7 +1,7 @@
 package com.TTS.ExceptionHander;
 
 import org.springframework.http.HttpStatus;
-import org.springframework.security.core.userdetails.UsernameNotFoundException;
+import org.springframework.security.authentication.BadCredentialsException;
 import org.springframework.validation.FieldError;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ExceptionHandler;
@@ -48,7 +48,7 @@ public class MyExceptionHander {
 		return errors;
 	}
 
-	@ExceptionHandler(UsernameNotFoundException.class)
+	@ExceptionHandler(BadCredentialsException.class)
 	@ResponseStatus(value = HttpStatus.BAD_REQUEST)
 	public ExceptionMessage userNameNotfound(Exception ex, WebRequest request) {
 

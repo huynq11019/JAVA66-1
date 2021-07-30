@@ -28,7 +28,7 @@ public class DomainUserDetailsService implements UserDetailsService {
         }
 //		System.out.println(account);
 //       log.debug("");
-        return new CustomUserDetail(account.getId(), account.getEmail(), account.getPasswordHash(),
+        return new CustomUserDetail(account.getFullName(),account.getId(), account.getEmail(), account.getPasswordHash(),
                 account.getAuthrority().stream().map(role -> new SimpleGrantedAuthority(role.getName()))
                         .collect(Collectors.toList()));
     }
@@ -38,7 +38,7 @@ public class DomainUserDetailsService implements UserDetailsService {
                 .orElseThrow(() -> new UsernameNotFoundException("user không tồn tại trong hệ thống"));
 //		System.out.println(account);
 //        log.info("đang load user detail từ accountID");
-        return new CustomUserDetail(account.getId(), account.getEmail(), account.getPasswordHash(),
+        return new CustomUserDetail(account.getFullName(),account.getId(), account.getEmail(), account.getPasswordHash(),
                 account.getAuthrority().stream().map(role -> new SimpleGrantedAuthority(role.getName()))
                         .collect(Collectors.toList()));
 

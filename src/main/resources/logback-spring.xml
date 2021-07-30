@@ -18,7 +18,8 @@
         <file>${LOGS}/spring-boot-logger.log</file>
         <encoder
                 class="ch.qos.logback.classic.encoder.PatternLayoutEncoder">
-            <Pattern>%d %p %C{1.} [%t] %m%n</Pattern>
+
+            <Pattern>  %date{HH:mm:ss.SSS}  ,lv=[%-5.5level]  ,|c=%-30.30logger{0} |,|f=%-20.20method |,l=[%-5.5L], t=%-15.15t ,m=%-80m ,pk=%logger %n</Pattern>
         </encoder>
 
         <rollingPolicy

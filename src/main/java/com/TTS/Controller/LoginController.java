@@ -17,6 +17,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
@@ -35,8 +36,8 @@ public class LoginController {
     @Autowired
     private SessionService sessionService;
 
-    @GetMapping("/ulogin")
-    public String loginForm(Model model) {
+    @GetMapping("/logind")
+    public String loginForm(Model model, @ModelAttribute("auth") RequestLogin auth) {
         model.addAttribute("loginStatus", "hello world");
         SecurityContextHolder.clearContext();
         cookieService.remoce("accesstoken");
@@ -46,13 +47,15 @@ public class LoginController {
 
     //    @PostMapping("/logind")
     @RequestMapping(value = "/logind", method = RequestMethod.POST)
-    public String LoginAction(@Valid RequestLogin auth, Model model, Errors err, HttpSession session) {
+    public String LoginAction(Model model,@Valid @ModelAttribute(name = "auth")  RequestLogin auth,  Errors err, HttpSession session) {
 
         log.info(auth.toString());
         if (err.hasErrors()) {
             //hiển thị thông báo lỗi
-            log.error("đăng nhập khoong thành coong");
-            return "redirect:/ulogin";
+//            log.error("validate khoogn thành công");
+//            return "redirect:/ulogin";
+//            model.addAttribute("loginerr","đăgn nhập không thành công ");
+            return "auth/LoginForm";
         }
         try {
             Authentication authentication = authenticationManager.authenticate(new UsernamePasswordAuthenticationToken(auth.getEmailLogin(),
@@ -69,17 +72,19 @@ public class LoginController {
             return "redirect:/home";
         } catch (Exception ex) {
             log.error(ex.getMessage());
-            return "redirect:/ulogin";
+            model.addAttribute("loginerr","UserName PassWord Not Found!");
+            return "auth/LoginForm";
         }
 
     }
-//    @GetMapping("/clogout")
-//    public String loutOut(){
-//        SecurityContextHolder.clearContext();
-//        cookieService.remoce("accesstoken");
-//        sessionService.remove("user");
-//
-//        return "redirect:/ulogin";
-//    }
+    @GetMapping("/clogout")
+    public String loutOut(){
+        SecurityContextHolder.clearContext();
+        cookieService.remoce("accesstoken");
+        sessionService.remove("user");
+
+
+        return "redirect:/logind";
+    }
 
 }

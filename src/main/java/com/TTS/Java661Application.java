@@ -76,7 +76,8 @@ public class Java661Application {
 						+ "Local: \t\t{}://localhost:{}{}\n\t"
 						+ "External: \t{}://{}:{}{}\n\t"
 						+ "Profile(s): \t{}\n----------------------------------------------------------",
-				env.getProperty("spring.application.name"), protocol, serverPort, contextPath,
+//				env.getProperty("spring.application.name")
+				Java661Application.class.getName(), protocol, serverPort, contextPath,
 				protocol, hostAddress,
 
 				serverPort, contextPath, env.getActiveProfiles());
@@ -88,7 +89,7 @@ public class Java661Application {
     	 
          String text = "FEC CODE TEAM";
          
-         com.TTS.Util.AciArt.Settings settings = asciiArt.new Settings(new Font("SansSerif", Font.CENTER_BASELINE, 14), text.length() * 15, 15); // 30 pixel width per character
+         com.TTS.Util.AciArt.Settings settings = asciiArt.new Settings(new Font("SansSerif", Font.HANGING_BASELINE, 14), text.length() * 15, 15); // 30 pixel width per character
          
          asciiArt.drawString(text, "*", settings);
     }

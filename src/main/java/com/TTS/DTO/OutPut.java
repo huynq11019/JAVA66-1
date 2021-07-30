@@ -1,10 +1,10 @@
 package com.TTS.DTO;
 
-import java.util.List;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -16,6 +16,6 @@ public class OutPut<T> {
 	public int Page;
 	public int limit;
 	public String orderBy;
-	public boolean order;
+	public String order;
 	public int emlementOfpage;
 }

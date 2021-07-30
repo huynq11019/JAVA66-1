@@ -1,7 +1,5 @@
 package com.TTS.sercurity.JWT;
 
-import com.TTS.DTO.AccountDTO;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -11,6 +9,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class JWTtoken {
 	private String idToken;
+	private String reFreshToken;
 	private String tokenType = "bruh";
 	private String name;
 //	private AccountDTO accountDTO;

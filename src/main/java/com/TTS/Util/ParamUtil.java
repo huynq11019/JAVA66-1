@@ -1,23 +1,19 @@
 package com.TTS.Util;
 
-import java.io.File;
-import java.io.IOException;
-import java.text.SimpleDateFormat;
-import java.util.Date;
-
-import javax.servlet.ServletContext;
-import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpServletResponse;
-
+import com.TTS.sercurity.CustomUserDetail;
+import com.TTS.sercurity.JWT.TokenPovider;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Component;
 import org.springframework.util.StringUtils;
 import org.springframework.web.multipart.MultipartFile;
 
-import com.TTS.sercurity.CustomUserDetail;
-import com.TTS.sercurity.JWT.JWTtoken;
-import com.TTS.sercurity.JWT.TokenPovider;
+import javax.servlet.ServletContext;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import java.io.File;
+import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 @Component
 public class ParamUtil {
@@ -147,7 +143,7 @@ public class ParamUtil {
 		return null;
 	}
 
-	public Integer getAccountId() {
+	public Integer 	getAccountId() {
 		String token = this.getTokenFormRequest();
 		CustomUserDetail auth = (CustomUserDetail) jwtPovider.getUserFormToken(token).getPrincipal();
 		return auth.getIdAccount();

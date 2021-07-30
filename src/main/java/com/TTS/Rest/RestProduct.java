@@ -13,7 +13,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-@CrossOrigin
+@CrossOrigin("*")
 @RestController
 @Slf4j
 public class RestProduct {
@@ -27,7 +27,8 @@ public class RestProduct {
 	public ResponseEntity<OutPut<ProductDTO>> getlistActive(@RequestParam(name = "page", defaultValue = "0") int page,
 															@RequestParam(name = "limit", defaultValue = "5") int limit,
 															@RequestParam(name = "sortby", defaultValue = "id") String sortBy,
-															@RequestParam(name = "order", defaultValue = "false") boolean order) {
+															@RequestParam(name = "order", defaultValue = "DESC") String order) {
+
 		Page<Product> paging = productService.loadPageActive(page, limit, sortBy, order);
 		if (paging != null) {
 			int countAllProduct = productService.countAll();
@@ -63,7 +64,7 @@ public class RestProduct {
 	public ResponseEntity<OutPut<Product>> loadAllDeleted(@RequestParam(name = "page", defaultValue = "0") int page,
 														  @RequestParam(name = "limit", defaultValue = "10") int limit,
 														  @RequestParam(name = "sortby", defaultValue = "id") String sortBy,
-														  @RequestParam(name = "order", defaultValue = "false") boolean order) {
+														  @RequestParam(name = "order", defaultValue = "DESC") String order) {
 		Page<Product> paging = productService.loadPageActive(page, limit, sortBy, order);
 		if (paging != null) {
 			OutPut<Product> out = new OutPut<>();

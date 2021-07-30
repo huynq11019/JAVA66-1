@@ -65,7 +65,7 @@ public class TokenPovider {
 		//get authrority form tooken
 		List<GrantedAuthority> authrorities = Arrays.stream(claim.get("auth").toString().split(","))
 				.map(SimpleGrantedAuthority::new).collect(Collectors.toList());
-		log.info(authrorities.toString());
+//		log.info(authrorities.toString());
 		Integer accountId = Integer.parseInt(claim.getSubject());
 		UserDetails userdetail = userdetailservice.loadUserByID(accountId);
 		return new UsernamePasswordAuthenticationToken(userdetail, token, authrorities);

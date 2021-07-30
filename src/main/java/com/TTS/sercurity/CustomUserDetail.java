@@ -1,20 +1,20 @@
 package com.TTS.sercurity;
 
-import java.util.Collection;
-import java.util.List;
-
-import org.springframework.security.core.GrantedAuthority;
-import org.springframework.security.core.userdetails.UserDetails;
-
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
+import java.util.Collection;
+import java.util.List;
 
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 public class CustomUserDetail implements UserDetails {
 	private static final long serialVersionUID = 7261895544371713946L;
+	private String fullName;
 	private Integer idAccount;
 	private String emailLogin;
 	private String passwordHash;;;;;;;;;;;;;;;;;;;;;;;;;;
