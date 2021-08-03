@@ -39,4 +39,5 @@ public class HomeController {
         model.addAttribute("activeTab", "home");
         model.addAttribute("cate", listCate);
     }
+
 }

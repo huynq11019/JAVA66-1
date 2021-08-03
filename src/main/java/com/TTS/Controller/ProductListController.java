@@ -36,6 +36,15 @@ public class ProductListController {
         return "views/product";
     }
 
+    @GetMapping("/product/search")
+    public String searchProduct(@RequestParam(name = "keyword") String keyword, Model model) {
+        log.info("keywword search is:" + keyword);
+        List<Product> listPro = productService.searchProduct(keyword);
+//        Page<Product> listPro = productService.loadPageActive(0, 10 , "id", "ASC");
+        model.addAttribute("listP", listPro);
+        return "views/product";
+    }
+
     // lấy sản phẩm theo danh mục
     @GetMapping("/{cateId}/produx")
     public String loadProductByid(@PathVariable("cateId") String cateId, Model modle) {
@@ -46,7 +55,7 @@ public class ProductListController {
             modle.addAttribute("listP", loadByCate);
             return "views/product";
 
-        }catch (Exception ex){
+        } catch (Exception ex) {
             log.error(ex.getMessage());
             return "redirect:/error";
         }

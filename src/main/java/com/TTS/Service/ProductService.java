@@ -21,4 +21,6 @@ public interface ProductService extends AuditService<Product,Integer> {
     List<Product> getListTrendy();
 
     int countAll();
+
+    List<Product> searchProduct(String keyword);
 }

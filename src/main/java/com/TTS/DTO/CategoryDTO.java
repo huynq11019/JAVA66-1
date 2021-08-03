@@ -3,6 +3,7 @@ package com.TTS.DTO;
 import javax.persistence.Column;
 import javax.validation.constraints.Size;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.sun.istack.NotNull;
 
 import lombok.AllArgsConstructor;
@@ -11,6 +12,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class CategoryDTO {
 	private Integer id;
 	@NotNull

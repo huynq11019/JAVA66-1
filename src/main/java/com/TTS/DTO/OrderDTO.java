@@ -11,12 +11,14 @@ import javax.validation.constraints.NotNull;
 import com.TTS.Entity.Account;
 import com.TTS.Entity.OrderDetail;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDTO extends BaseDTO {
 	private Integer id;
 	@NotNull(message = "không được để chống tên")

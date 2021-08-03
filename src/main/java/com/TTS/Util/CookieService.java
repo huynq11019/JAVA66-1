@@ -60,7 +60,7 @@ public class CookieService {
             for (Cookie cookie : cookies) {
 //			System.out.println(	cookie.getValue());
                 if (cookie.getName().equals(name)) {
-                    log.info("vừa tìm thấy cookei");
+//                    log.info("vừa tìm thấy cookei");
                     return cookie.getValue();
                 }
             }

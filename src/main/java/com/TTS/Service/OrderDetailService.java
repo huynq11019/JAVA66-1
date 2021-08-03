@@ -1,5 +1,7 @@
 package com.TTS.Service;
 
-public interface OrderDetailService {
+import com.TTS.Entity.OrderDetail;
+
+public interface OrderDetailService extends  AuditService<OrderDetail,Integer> {
 
 }

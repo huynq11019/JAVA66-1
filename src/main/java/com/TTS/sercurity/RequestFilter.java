@@ -33,8 +33,8 @@ public class RequestFilter extends OncePerRequestFilter {
 			throws ServletException, IOException {
 	String cookieValue =	cookie.getvalue("accesstokenHTTP");//  use for controller
 	String headerValue = param.getTokenFormRequest(); // for controller
-		log.info(cookieValue);
-		log.info(headerValue);
+//		log.info("lấy từ  web"+cookieValue);
+//		log.info("lấy từ angualr"+headerValue);
 		try {
 //			String token = param.getTokenFormRequest();
 			String token = cookieValue == null? headerValue: cookieValue;

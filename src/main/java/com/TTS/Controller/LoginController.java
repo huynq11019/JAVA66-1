@@ -38,16 +38,17 @@ public class LoginController {
 
     @GetMapping("/logind")
     public String loginForm(Model model, @ModelAttribute("auth") RequestLogin auth) {
+    	
         model.addAttribute("loginStatus", "hello world");
         SecurityContextHolder.clearContext();
-        cookieService.remoce("accesstoken");
+        cookieService.remoce("accesstokenHTTP");
         sessionService.remove("user");
         return "auth/LoginForm";
     }
 
-    //    @PostMapping("/logind")
-    @RequestMapping(value = "/logind", method = RequestMethod.POST)
-    public String LoginAction(Model model,@Valid @ModelAttribute(name = "auth")  RequestLogin auth,  Errors err, HttpSession session) {
+
+    @RequestMapping(value = "/loginx", method = RequestMethod.POST)
+    public String LoginAction(Model model, @Valid @ModelAttribute(name = "auth")  RequestLogin auth, Errors err, HttpSession session) {
 
         log.info(auth.toString());
         if (err.hasErrors()) {
@@ -62,13 +63,14 @@ public class LoginController {
                     auth.getPassword()));
             CustomUserDetail custom = (CustomUserDetail) authentication.getPrincipal();
             log.info("test Pricial" + custom);
-            SecurityContextHolder.getContext().setAuthentication(authentication);
+
             String jwt = tokenPovider.createToken((CustomUserDetail) authentication.getPrincipal());
-            sessionService.set("user", "authentication.getPrincipal()");
+//            sessionService.set("user", authentication.getPrincipal());
             session.setAttribute("user",authentication.getPrincipal());
-            cookieService.add("accesstoken", jwt, 1000, true);
+            cookieService.add("accesstokenHTTP", jwt, 1000, true);
 //  System.err.println(session.getAttribute("user"));
             model.addAttribute("loginStatus", "Login fail không thành c");
+            SecurityContextHolder.getContext().setAuthentication(authentication);
             return "redirect:/home";
         } catch (Exception ex) {
             log.error(ex.getMessage());
@@ -77,12 +79,12 @@ public class LoginController {
         }
 
     }
-    @GetMapping("/clogout")
+    @GetMapping("/logoutx")
     public String loutOut(){
         SecurityContextHolder.clearContext();
         cookieService.remoce("accesstoken");
         sessionService.remove("user");
-
+        	
 
         return "redirect:/logind";
     }

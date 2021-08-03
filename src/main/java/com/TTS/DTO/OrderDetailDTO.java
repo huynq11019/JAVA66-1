@@ -1,14 +1,16 @@
 package com.TTS.DTO;
 
-import javax.validation.constraints.Min;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.validation.constraints.Min;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OrderDetailDTO extends BaseDTO {
 	private Integer id;
 	@Min(value = 0)

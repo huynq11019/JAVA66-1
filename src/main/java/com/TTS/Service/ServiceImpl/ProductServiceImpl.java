@@ -15,7 +15,6 @@ import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
 import java.sql.SQLException;
-import java.time.Instant;
 import java.util.List;
 
 @Service
@@ -57,9 +56,11 @@ public class ProductServiceImpl implements ProductService {
         // nếu id có tồn tại thì set null
         if (delete != null && pRepo.existsById(delete)) {
             Product pro = pRepo.getOne(delete);
-            pro.setDeleteAt(Instant.now());
-
-            return pRepo.save(pro);
+//            pro.setDeleteAt(Instant.now());
+//
+//            return pRepo.save(pro);
+            pRepo.delete(pro);
+            return pro;
         }
         return null;
     }
@@ -126,5 +127,11 @@ public class ProductServiceImpl implements ProductService {
     @Override
     public int countAll() {
         return (int) pRepo.count();
+    }
+
+    @Override
+    public List<Product> searchProduct(String keyword) {
+        List<Product> product = pRepo.searchAllBykeyword("%" + keyword + "%");
+        return product;
     }
 }

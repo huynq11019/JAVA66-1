@@ -1,16 +1,15 @@
 package com.TTS.maper;
 
-import java.util.List;
-import java.util.stream.Collectors;
-
+import com.TTS.DTO.ProductDTO;
 import com.TTS.Entity.Category;
+import com.TTS.Entity.Product;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.mapstruct.Mappings;
-
-import com.TTS.DTO.ProductDTO;
-import com.TTS.Entity.Product;
 import org.mapstruct.Named;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Mapper(componentModel = "spring")
 public interface ProductMapper {
@@ -42,7 +41,7 @@ public interface ProductMapper {
 			return null;
 		}
 		Category cate = new Category();
-		cate.setId(dto.getId());
+		cate.setId(dto.getCategory());
 		return cate;
 	}
 }

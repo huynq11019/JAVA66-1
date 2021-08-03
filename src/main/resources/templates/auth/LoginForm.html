@@ -45,22 +45,22 @@
                   This is a primary alert—check it out!
                 </div>
                 <!--/*@thymesVar id="loginrequest" type=""*/-->
-                <form role="form text-left" th:action="@{/logind}" th:object="${auth}" method="post" >
+                <form role="form text-left" th:action="@{/loginx}" th:object="${auth}" method="post" >
                   <label>Email</label>
                   <small class="text-danger" th:errors="*{emailLogin}">error message</small>
                   <div class="mb-3">
-                    <input th:field="*{emailLogin}" type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon"
+                    <input th:field="*{emailLogin}"  type="email" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="email-addon"
                     name="emailLogin" required>
                   </div>
 
                   <label>Password</label>
                   <small class="text-danger" th:errors="*{password}">error message</small>
                   <div class="mb-3">
-                    <input th:field="*{password}" type="password" class="form-control" placeholder="Password" aria-label="Password" required
+                    <input th:field="*{password}" type="password"  class="form-control" placeholder="Password" aria-label="Password" required
                      aria-describedby="password-addon" name="password">
                   </div>
                   <div class="form-check form-switch">
-                    <input class="form-check-input" type="checkbox" id="rememberMe" checked="">
+                    <input class="form-check-input" type="checkbox" name="rm" id="rememberMe" checked="true">
                     <label class="form-check-label" for="rememberMe">Remember me</label>
                   </div>
                   <div class="text-center">

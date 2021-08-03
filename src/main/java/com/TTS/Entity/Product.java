@@ -29,7 +29,7 @@ public class Product extends SuperClass implements Serializable {
 	private Integer id;
 	@NotNull
 	@Size(min = 3,max = 90,message = "length name betwent  3-90 ")
-	@Column(name="name_product", length=90, nullable = false, unique = true)
+	@Column(name="name_product", length=90, nullable = false, unique = false)
 	private String nameProduct;
 	@Column(name="image_product")
 	private String image;
@@ -44,7 +44,7 @@ public class Product extends SuperClass implements Serializable {
 	@Max(4)
 	private Integer status=0;
 	@PositiveOrZero(message = "số lượng sản phẩm không được âm")
-	private int quantity;
+	private int quantity = 0;
 	@Column(name = "description", length = 200)
 	private String description;
 	@JsonIgnore

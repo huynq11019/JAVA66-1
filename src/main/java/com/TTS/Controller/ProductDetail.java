@@ -21,6 +21,7 @@ public class ProductDetail {
             Integer parse = Integer.parseInt(idProduct);
             Product pro = productService.getProductByid(parse);
             model.addAttribute("product", pro);
+            log.info(pro.toString());
             return "views/productDetail";
         } catch (Exception ex) {
             log.error(ex.getMessage());

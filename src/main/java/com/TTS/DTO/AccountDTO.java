@@ -12,6 +12,7 @@ import javax.validation.constraints.Size;
 
 //import com.TTS.Entity.Order;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.Getter;
@@ -22,6 +23,7 @@ import lombok.Setter;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountDTO {
 	private Integer id;
 	@NotBlank(message = "Tên không được để trống")

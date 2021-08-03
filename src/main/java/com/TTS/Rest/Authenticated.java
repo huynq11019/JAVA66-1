@@ -44,7 +44,7 @@ public class Authenticated {
                     new UsernamePasswordAuthenticationToken(loginRequest.getEmailLogin(), loginRequest.getPassword()));
             CustomUserDetail custom = (CustomUserDetail) authentication.getPrincipal();
             log.info("test pricical: " + custom);
-//			SecurityContextHolder.getContext().setAuthentication(authentication);
+			SecurityContextHolder.getContext().setAuthentication(authentication);
             String jwt = tokenPovider.createToken((CustomUserDetail) authentication.getPrincipal());
 
             cookieService.add("accesstokenHTTP", jwt, 200*200*20, true);

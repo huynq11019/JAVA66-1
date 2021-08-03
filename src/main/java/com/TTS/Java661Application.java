@@ -5,6 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.properties.EnableConfigurationProperties;
 import org.springframework.core.env.Environment;
 import org.springframework.util.StringUtils;
 
@@ -18,6 +19,7 @@ import java.util.Map;
 
 @SpringBootApplication
 //@EnableJpaRepositories
+@EnableConfigurationProperties
 @Slf4j
 public class Java661Application {
 	private static final String SPRING_PROFILE_DEFAULT = "spring.profiles.default";
@@ -91,6 +93,6 @@ public class Java661Application {
          
          com.TTS.Util.AciArt.Settings settings = asciiArt.new Settings(new Font("SansSerif", Font.HANGING_BASELINE, 14), text.length() * 15, 15); // 30 pixel width per character
          
-         asciiArt.drawString(text, "*", settings);
+         asciiArt.drawString(text, "#", settings);
     }
 }
