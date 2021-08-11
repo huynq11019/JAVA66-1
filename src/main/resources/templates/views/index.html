@@ -135,7 +135,7 @@
                         <span class="badge badge-danger" th:if="*{discount>0}" th:text="'Giảm -'+*{discount}+'%'">sale</span>
                         <span class="badge badge-success" th:if="*{!isNewProduct()}">New</span>
 <!--                        <img class="img-fluid w-100 lazyload" th:src="*{image}? '/img/'+*{image} : 'https://www.playzone.vn/image/cache/no_image-100x100.png' " alt="" loading="lazy" >-->
-                        <img class="img-fluid w-100 lazyload" th:data-src="@{*{image} != null ? '/img/'+ *{image} : 'https://www.playzone.vn/image/cache/no_image-100x100.png' }" alt="" loading="lazy">
+                        <img class="img-fluid w-100 lazyload" th:data-src="@{*{image} != null ? '/api/file/img/'+ *{image} : 'https://www.playzone.vn/image/cache/no_image-100x100.png' }" alt="" loading="lazy">
                     </div>
                     <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                         <h6 class="text-truncate mb-3" th:text="*{nameProduct}">Colorful Stylish Shirt</h6>
@@ -315,7 +315,7 @@
                         <span class="badge badge-danger" th:if="*{discount>0}" th:text="'Giảm -'+*{discount}+'%'">sale</span>
                         <span class="badge badge-success" th:if="*{!isNewProduct()}">New</span>
                         <!-- <img  class="img-fluid w-100" th:src="'/img/'+*{image}" alt=""> -->
-                        <img class="img-fluid w-100 lazyload" th:data-src="@{*{image} != null ? '/img/'+ *{image} : 'https://www.playzone.vn/image/cache/no_image-100x100.png' }" alt="" loading="lazy">
+                        <img class="img-fluid w-100 lazyload" th:data-src="@{*{image} != null ? '/api/file/img/'+ *{image} : 'https://www.playzone.vn/image/cache/no_image-100x100.png' }" alt="" loading="lazy">
 <!--                        th:attr="data-src=|/img/*{image}|  "-->
 <!--                        ? '/img/'+ *{image} : 'https://www.playzone.vn/image/cache/no_image-100x100.png-->
                     </div>
@@ -467,28 +467,28 @@
             <div class="col">
                 <div class="owl-carousel vendor-carousel">
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="/img/vendor-1.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-1.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy" data-src="/img/vendor-2.jpg" alt="">
+                        <img class="lazyload" loading="lazy" data-src="/api/file/img/vendor-2.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="/img/vendor-3.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-3.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="img/vendor-4.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-4.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="/img/vendor-5.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-5.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="/img/vendor-6.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-6.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="/img/vendor-7.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-7.jpg" alt="">
                     </div>
                     <div class="vendor-item border p-4">
-                        <img class="lazyload" loading="lazy"  data-src="/img/vendor-8.jpg" alt="">
+                        <img class="lazyload" loading="lazy"  data-src="/api/file/img/vendor-8.jpg" alt="">
                     </div>
                 </div>
             </div>

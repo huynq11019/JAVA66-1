@@ -162,7 +162,7 @@
                                 <span class="badge badge-danger" th:if="*{discount>0}"
                                       th:text="'Giảm -'+*{discount}+'%'">sale</span>
                                 <span class="badge badge-success" th:if="*{!isNewProduct()}">New</span>
-                                <img class="img-fluid w-100" th:src="'/img/' + *{image}" alt="">
+                                <img class=" w-100 max-height-100" th:src="'/api/file/img/' + *{image}" alt="">
                             </div>
                             <div class="card-body border-left border-right text-center p-0 pt-4 pb-3">
                                 <h6 class="text-truncate mb-3" th:text="*{nameProduct}">Colorful Stylish Shirt</h6>
@@ -177,8 +177,10 @@
                                 <!--                                <a href="" class="btn btn-sm text-dark p-0"><i class="fas fa-eye text-primary mr-1"></i>View Detail</a>-->
                                 <a th:href="@{'/produx/'+*{id}}" class="btn btn-sm text-dark p-0"><i
                                         class="fas fa-eye text-primary mr-1"></i>View Detail</a>
-                                <a href="" class="btn btn-sm text-dark p-0"><i
-                                        class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart</a>
+                                <button  class="btn btn-sm text-dark p-0" data-toggle="modal" th:onclick="|addCart(*{id})|"
+                                         data-target="#myModal">
+                                    <i class="fas fa-shopping-cart text-primary mr-1"></i>Add To Cart
+                                </button>
 
                             </div>
                         </div>

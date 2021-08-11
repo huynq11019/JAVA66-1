@@ -9,10 +9,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -42,7 +39,15 @@ public class CartController {
         System.out.println("giỏ hàng" + shopingCartItem.getItems());
         return "redirect:/cart";
     }
-
+    @PostMapping("/cart/add/{idProduct}/{soluongSanPham}")
+    public String addTocartwithQuantity(@PathVariable("idProduct") Integer idProduct,@PathVariable("soluongSanPham") Integer soluongSanPham){
+        System.out.println("sản phẩm vừa thêm vào: " + idProduct);
+        Product product = productService.getProductByid(idProduct);
+        product.setQuantity(soluongSanPham);
+        shopingCartItem.add(product);
+        System.out.println("giỏ hàng" + shopingCartItem.getItems());
+        return "redirect:/cart";
+    }
     @GetMapping("/cart/remove/{id}")
     public String removeCart(@PathVariable("id") Integer idpro) {
         System.out.println("id muốn xóa: " + idpro);

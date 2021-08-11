@@ -16,6 +16,8 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -43,13 +45,13 @@ public class Authenticated {
             Authentication authentication = authenticationManager.authenticate(
                     new UsernamePasswordAuthenticationToken(loginRequest.getEmailLogin(), loginRequest.getPassword()));
             CustomUserDetail custom = (CustomUserDetail) authentication.getPrincipal();
-            log.info("test pricical: " + custom);
+            log.info("test pricical: " + custom.getAuthrority());
 			SecurityContextHolder.getContext().setAuthentication(authentication);
             String jwt = tokenPovider.createToken((CustomUserDetail) authentication.getPrincipal());
-
+            List<String> role = custom.getAuthrority().stream().map(r -> r.getAuthority()).collect(Collectors.toList());
             cookieService.add("accesstokenHTTP", jwt, 200*200*20, true);
 
-            return ResponseEntity.ok(new JWTtoken(jwt, "refreshToken", "bruh", custom.getEmailLogin()));
+            return ResponseEntity.ok(new JWTtoken(jwt, "refreshToken", "bruh", custom.getEmailLogin(),role ));
         } catch (Exception e) {
             log.error("đăng nhập không thành công", e);
 //			e.printStackTrace();

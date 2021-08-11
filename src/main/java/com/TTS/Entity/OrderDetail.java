@@ -1,5 +1,6 @@
 package com.TTS.Entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -27,8 +28,8 @@ public class OrderDetail extends SuperClass implements Serializable {
 	@Min(value = 0)
 	@Column(name = "quantity")
 	private Integer quantity;
-
-	@ManyToOne()
+	@JsonIgnore
+	@ManyToOne(fetch = FetchType.EAGER)
 	@JoinColumn(name = "form_od")
 	private Order fromOd;
 	@ManyToOne()

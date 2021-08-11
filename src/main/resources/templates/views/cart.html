@@ -14,10 +14,10 @@
                 </tr>
                 </thead>
                 <tbody class="align-middle">
-                    <form th:each="item, state : ${cart.getItems()}"  th:object="${item}" action="/cart/update/${item.id }">
+                    <form th:each="item, state : ${cart.getItems()}"  th:object="${item}" th:action="'/cart/update/'+ ${item.id }">
                         <tr>
                             <td class="align-middle">
-                                <img th:src = "'/img/'+*{image}" alt="" style="width: 50px;" >
+                                <img th:src = "'/api/file/img/'+*{image}" alt="" style="width: 50px;" >
                                 <span th:text="*{nameProduct}"></span>
                             </td>
                             <td class="align-middle" th:text="*{realPrice}">$ Giá sản phẩm</td>
@@ -30,7 +30,8 @@
                                     </div>
                                     <input type="text" name="qty"
                                            class="form-control form-control-sm bg-secondary text-center" min="0"
-                                           th:value="*{quantity}" onKeyPress="return (event.keyCode >= 46 && event.keyCode <=57
+                                           th:value="*{quantity}"
+                                           onKeyPress="return (even t.keyCode >= 46 && event.keyCode <=57
                                                           || event.keyCode === 8 ) && event.keycode != 190">
                                     <div class="input-group-btn">
                                         <button class="btn btn-sm btn-primary btn-plus">
@@ -40,7 +41,7 @@
                                 </div>
                             </td>
                             <td class="align-middle" th:text="*{realPrice * quantity}">$ tổng giá</td>
-                            <td class="align-middle"><a href="/cart/remove/"
+                            <td class="align-middle"><a th:href="'/cart/remove/'+ *{id}"
                                                         class="btn btn-sm btn-primary">
                                 <i class="fa fa-times"></i>
                             </a></td>
@@ -81,10 +82,10 @@
                 <div class="card-footer border-secondary bg-transparent">
                     <div class="d-flex justify-content-between mt-2">
                         <h5 class="font-weight-bold">Total</h5>
-<!--                        <h5 class="font-weight-bold">$ ${cart.getAmout()+10 }</h5>-->
+                        <h5 class="font-weight-bold" th:text="'$' +${cart.getAmout()+10}">$ </h5>
                     </div>
 
-                    <a href="/au/checkout" class="btn btn-block btn-primary my-3 py-3 text-white">Proceed
+                    <a href="/au/checkout" th:hidden="${cart.getAmout() == 0}" class="btn btn-block btn-primary my-3 py-3 text-white">Proceed
                         To Checkout</a>
 
                 </div>
@@ -93,4 +94,5 @@
     </div>
 </div>
 <!-- Cart End -->
+
 </html>

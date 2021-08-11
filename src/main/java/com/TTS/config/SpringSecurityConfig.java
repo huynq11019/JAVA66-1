@@ -31,7 +31,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
     private JWTentrypoin jwtEntripoin;
     private static final String[] IGNOR_URLS = {"/img/*.{png,html,jpa,svg,}", "/i18n/**", "/content/**",
             "/swagger-ui/index.html", "/test/**"};
-    private static final String[] PUBLIC_URL = {"/api/authenticate", "/api/register", "/api/forgotpassword","/img/**"};
+    private static final String[] PUBLIC_URL = {"/api/authenticate", "/api/register", "/api/forgotpassword","/api/file/**"};
 
     private static final String[] AUTHENTICATED_URLS = {"/api/**"};
 
@@ -92,7 +92,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 //		// Thực hiện xác thực với những request
         httpSecurity.authorizeRequests().antMatchers("/api/admin/**").hasAnyAuthority("ADMIN")
                 .antMatchers(PUBLIC_URL).permitAll()
-                .antMatchers("/api/**").authenticated()
+                .antMatchers("/api/**","/au/**").authenticated()
                 .anyRequest().permitAll();
         // xử lý exception
         httpSecurity.formLogin()

@@ -20,4 +20,5 @@ public class OutPut<T> {
 	public String orderBy;
 	public String order;
 	public int emlementOfpage;
+	public long totalElement;
 }

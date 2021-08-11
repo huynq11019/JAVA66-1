@@ -55,6 +55,10 @@ public class Product extends SuperClass implements Serializable {
 	@OneToMany(mappedBy = "fromProduct")
 	private Set<OrderDetail> orderDetails;
 
+	public Product(Integer id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 		return "Product{" +

@@ -4,6 +4,8 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
@@ -12,6 +14,7 @@ public class JWTtoken {
 	private String reFreshToken;
 	private String tokenType = "bruh";
 	private String name;
+	private List<String> role;
 //	private AccountDTO accountDTO;
 //	public JWTtoken(String idToken) {
 //

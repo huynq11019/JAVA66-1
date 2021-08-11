@@ -69,7 +69,8 @@
                         th:classappend="${activeTab == 'produx'}? 'active': ''">Shop</a>
                 </div>
                 <div class="navbar-nav ml-auto py-0">
-                    <div  th:if="${session.user != null}">
+<!--                    <div  th:if="${session.user != null}">-->
+                    <div th:hidden="true">
                         <a class="nav-link" th:utext="${session.user}"> huy
                             deptrai</a>
                     </div>

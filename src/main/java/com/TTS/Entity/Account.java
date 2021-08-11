@@ -1,33 +1,20 @@
 package com.TTS.Entity;
 
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.HashSet;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.BatchSize;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -53,7 +40,6 @@ public class Account extends SuperClass implements Serializable {
 	@Column(name = "passowrd_slat")
 	private String passowrdSalt;
 	@Column(name = "descrption", length = 200)
-	@Size(min = 8, max = 15 , message = "số điện thoại từ 0-15 ký tự")
 	private String description;
 	@Column(name = "phone_number", length = 15)
 	private String phoneNumber;
@@ -78,7 +64,7 @@ public class Account extends SuperClass implements Serializable {
 	@BatchSize(size = 10)
 	private Set<Authrority> authrority = new HashSet<>();	
 	@JsonIgnore
-	@OneToMany(mappedBy = "account_od")
+	@OneToMany(mappedBy = "accountod")
 	private Set<Order> orders = new HashSet<>();
 	@Override
 	public String toString() {

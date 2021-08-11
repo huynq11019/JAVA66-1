@@ -43,6 +43,7 @@ public class RestProduct {
             out.setEmlementOfpage(paging.getNumberOfElements());
             out.setPage(paging.getNumber());
             out.setOrderBy(sortBy);
+            out.setTotalElement(productService.countAll());
             out.setFrist((page <= 0 ? true : false));
             if (countAllProduct % limit == 0) {
                 out.setTotalPage(countAllProduct / limit);
@@ -108,6 +109,14 @@ public class RestProduct {
 
     }
 
+    @PutMapping("/api/product/{id}")
+    public ResponseEntity<ProductDTO> updateProduk(@PathVariable("id") Integer idProduct, @RequestBody ProductDTO product) {
+        product.setId(idProduct);
+        Product pro = mapper.toEntity(product);
+        Product productsaved = productService.update(pro);
+        return ResponseEntity.ok(mapper.toDTO(productsaved));
+
+    }
 
     // xóa sản phẩm
     @DeleteMapping("/api/product/{id}")
