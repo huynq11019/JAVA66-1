@@ -1,13 +1,15 @@
 package com.TTS.DTO;
 
-import java.util.List;
-
+import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+
+import java.util.List;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class OutPut<T> {
 	public List<T> content;
 	public boolean frist;
@@ -16,5 +18,7 @@ public class OutPut<T> {
 	public int Page;
 	public int limit;
 	public String orderBy;
-	public boolean order;
+	public String order;
+	public int emlementOfpage;
+	public long totalElement;
 }

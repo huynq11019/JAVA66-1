@@ -1,32 +1,20 @@
 package com.TTS.Entity;
 
-import java.io.Serializable;
-import java.time.Instant;
-import java.util.HashSet;
-import java.util.Set;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.hibernate.annotations.BatchSize;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
-import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
-import javax.persistence.Table;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-
-import org.hibernate.annotations.BatchSize;
-
-import com.fasterxml.jackson.annotation.JsonIgnore;
-
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.io.Serializable;
+import java.time.Instant;
+import java.util.HashSet;
+import java.util.Set;
 
 @Data
 @AllArgsConstructor
@@ -46,13 +34,12 @@ public class Account extends SuperClass implements Serializable {
 	@NotNull(message = "Ful name đang là null")
 	@Column(name = "fullname",length=80)
 	private String fullName;
-	@Size(min = 5, max = 50, message = "độ dài passowrd từ 0-50 ký tự")
-	@Column(name = "password_hash", length = 50, nullable = false)
+	@Size(min = 5, message = "độ dài passowrd từ 0-50 ký tự")
+	@Column(name = "password_hash",  nullable = false)
 	private String passwordHash;
 	@Column(name = "passowrd_slat")
 	private String passowrdSalt;
 	@Column(name = "descrption", length = 200)
-	@Size(min = 8, max = 15 , message = "số điện thoại từ 0-15 ký tự")
 	private String description;
 	@Column(name = "phone_number", length = 15)
 	private String phoneNumber;
@@ -67,17 +54,23 @@ public class Account extends SuperClass implements Serializable {
 	@NotBlank(message = "email không được để trống")
 	@NotNull(message = "email không được null")
 	@Email(message = "email không đúng định dạng")
-	@Column(name = "email", length = 50)
+	@Column(name = "email", length = 50,unique = true)
 	private String email;
 //	@JsonIgnore
-	@ManyToMany
+	@ManyToMany(fetch = FetchType.EAGER)
 	@JoinTable(name = "account_authrority", joinColumns = {
 			@JoinColumn(name = "user_id", referencedColumnName = "id") }, inverseJoinColumns = {
 					@JoinColumn(name = "authrority_name", referencedColumnName = "name") })
 	@BatchSize(size = 10)
 	private Set<Authrority> authrority = new HashSet<>();	
 	@JsonIgnore
-	@OneToMany(mappedBy = "account_od")
+	@OneToMany(mappedBy = "accountod")
 	private Set<Order> orders = new HashSet<>();
+	@Override
+	public String toString() {
+		return "Account [id=" + id + ", fullName=" + fullName + ", passwordHash=" + passwordHash + ", passowrdSalt="
+				+ passowrdSalt + ", description=" + description + ", phoneNumber=" + phoneNumber + ", status=" + status
+				+ ", DOB=" + DOB + ", email=" + email + "]";
+	}
 
 }

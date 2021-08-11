@@ -1,0 +1,75 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="~{/layout/layout::dynamic(~{::checkout},false)}">
+<div class="container-fluid pt-5" th:fragment="checkout">
+    <div class="row px-xl-5">
+        <div class="col-lg-6">
+            <div class="mb-4">
+                <h4 class="font-weight-semi-bold mb-4">Billing Address</h4>
+                <form action="/au/confirmOrder" th:object="${order}" method="post">
+                    <div class=" form-group">
+                        <label>Tên người Nhận</label>  <small class="text-danger" th:if="${#fields.hasErrors('nguoinhan')}" th:errors="*{nguoinhan}">người nhận error</small>
+                        <input name="nguoinhan" class="form-control" type="text" th:field="*{nguoinhan}" placeholder="Name">
+                    </div>
+                    <div class=" form-group">
+                        <label>Số điện thoại</label>  <small class="text-danger" th:if="${#fields.hasErrors('sdt')}" th:errors="*{sdt}">người nhận error</small>
+                        <input class="form-control" name="sdt" type="text" th:field="*{sdt}" placeholder="Phone Number"  onKeyPress="return (even t.keyCode >= 46 && event.keyCode <=57
+                                                          || event.keyCode === 8 )">
+                    </div>
+                    <div class=" form-group">
+                        <label>Địa chỉ nhận hàng</label> <small class="text-danger" th:if="${#fields.hasErrors('address')}" th:errors="*{address}">người nhận error</small>
+                        <input name="address" th:field="*{address}"
+                                                                class="form-control" type="text" placeholder="Address">
+                    </div>
+                    <div class="card-body">
+                        <div class="form-group"> <small class="text-danger" th:if="${#fields.hasErrors('paymethod')}" th:errors="*{paymethod}">người nhận error</small>
+                            <select multiple class="form-control" name="paymethod" th:field="*{paymethod}">
+                                <option value="MOMO">MOMO</option>
+                                <option value="PAYPAL">PAYPAL</option>
+                                <option value="COD">COD</option>
+                            </select>
+
+                        </div>
+                    </div>
+                    <div class="card-footer border-secondary bg-transparent">
+                        <button
+                                class="btn btn-lg btn-block btn-primary font-weight-bold my-3 py-3">Place
+                            Order</button>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+        <div class="col-lg-6">
+            <div class="card border-secondary mb-5">
+                <div class="card-header bg-secondary border-0">
+                    <h4 class="font-weight-semi-bold m-0">Order Total</h4>
+                </div>
+                <div class="card-body">
+                    <h5 class="font-weight-medium mb-3">Products</h5>
+<!--                    <p th:text="@{ShopingCartimpl.getAmout()}"></p>-->
+<!--                    <c:forEach var="icart" items="${cart.getItems() }">-->
+<!--                        <div class="d-flex justify-content-between">-->
+<!--                            <p>${icart.name }</p>-->
+<!--                            <p>x ${icart.qty }</p>-->
+<!--                            <p>$ ${icart.price * icart.qty }</p>-->
+<!--                        </div>-->
+
+<!--                    </c:forEach>-->
+                    <div class="d-flex justify-content-between" th:each="iream, state : ${cart.getItems()}" th:object="${iream}">
+                        <p th:text="*{nameProduct}"></p>
+                        <p th:text="'x'+*{quantity}">x ${icart.qty }</p>
+                        <p th:text="${iream.realPrice * iream.quantity}">$ ${icart.price * icart.qty }</p>
+                    </div>
+                </div>
+                <div class="card-footer border-secondary bg-transparent">
+                    <div class="d-flex justify-content-between mt-2">
+                        <h5 class="font-weight-bold">Total</h5>
+                        <h5 class="font-weight-bold" th:text="${cart.getAmout()}">$ ${cart.getAmout()+10 }</h5>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+</html>

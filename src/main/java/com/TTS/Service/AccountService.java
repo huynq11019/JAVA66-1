@@ -1,14 +1,12 @@
 package com.TTS.Service;
 
-import java.util.List;
-import java.util.Optional;
-
+import com.TTS.Entity.Account;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.util.MultiValueMap;
 
-import com.TTS.DTO.AccountDTO;
-import com.TTS.Entity.Account;
+import java.util.List;
+import java.util.Optional;
 
 public interface AccountService {
 	Account createUser(Account acc);
@@ -17,20 +15,21 @@ public interface AccountService {
 
 	Optional<Account> findOne(Integer id);
 
+	Account UpdateAccountWithPermission(Account account);
 
 	Optional<Account> findByEmail(String email);
 
 	Page<Account> search(MultiValueMap<String, String> queryParams, Pageable pageable);
 
-	Optional<Account> getUserWithAuthorities();
+	Optional<Account> getUserWithAuthorities(Integer accountID);
 
 	List<Account> getListUser();
-	List<Account> getPage(int page, int limit, String sortBy, boolean order);
+	
+	List<Account> getPage(int page, int limit, String sortBy, String order);
+	
 	Account update(Account acc);
 
 	Account selfUpdate(Account acc);
-
-	Account updateByMobile(Account acc);
 
 	Long countActiveAccount();
 
