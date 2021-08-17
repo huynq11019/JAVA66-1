@@ -24,7 +24,7 @@ public interface AccountMapper {
     public AccountMapper INSTANCE = Mappers.getMapper(AccountMapper.class);
 
     @Mappings({@Mapping(source = "entity", target = "authrority", qualifiedByName = "fromAuthrority"),
-//		   @Mapping(target = "orderString", ignore = true),		
+		   @Mapping(target = "dob", source = "entity.DOB", qualifiedByName = "todob2"),
     })
     AccountDTO toDto(Account entity);
 
@@ -76,7 +76,7 @@ public interface AccountMapper {
     @Named("toDOB")
     default Instant toInstan(String dob) {
         Instant instant = Instant.now();
-        if (dob != null || dob.equals("")) {
+        if (dob != null && dob.equals("")) {
 			try {
 				instant = new SimpleDateFormat("yyyy-MM-dd").parse(dob).toInstant();
 			} catch (ParseException e) {
@@ -85,5 +85,17 @@ public interface AccountMapper {
 		}
 
         return instant;
+    }
+    @Named("todob2")
+    default  String toString (Instant dob){
+        String dateOfBrith = "";
+        if(dob != null ){
+            try {
+                dateOfBrith =  dob.toString();
+            }catch (Exception ex){
+                ex.printStackTrace();
+            }
+        }
+        return dateOfBrith;
     }
 }

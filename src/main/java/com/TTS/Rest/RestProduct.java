@@ -5,6 +5,7 @@ package com.TTS.Rest;
 import com.TTS.DTO.OutPut;
 import com.TTS.DTO.ProductDTO;
 import com.TTS.Entity.Product;
+import com.TTS.Service.AccountService;
 import com.TTS.Service.ProductService;
 import com.TTS.maper.ProductMapper;
 import lombok.extern.slf4j.Slf4j;
@@ -15,6 +16,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 @CrossOrigin("*")
 @RestController
@@ -25,6 +27,8 @@ public class RestProduct {
     private ProductService productService;
     @Autowired
     private ProductMapper mapper;
+    @Autowired
+    private AccountService accountService;
 
     @GetMapping("/api/products")
     public ResponseEntity<OutPut<ProductDTO>> getlistActive(@RequestParam(name = "page", defaultValue = "0") int page,
@@ -37,7 +41,12 @@ public class RestProduct {
             int countAllProduct = productService.countAll();
             OutPut<ProductDTO> out = new OutPut<>();
 //			log.debug("hello");
-            out.setContent(mapper.toListDto(paging.getContent()));
+            List<ProductDTO> productDTOS = mapper.toListDto(paging.getContent()).stream().map(p -> {
+                p.setCreateByName(accountService.findOne(p.getCreatedBy()).get().getFullName());
+                return p;
+            }).collect(Collectors.toList());
+
+            out.setContent(productDTOS);
             out.setOrder(order);
             out.setLimit(limit);
             out.setEmlementOfpage(paging.getNumberOfElements());

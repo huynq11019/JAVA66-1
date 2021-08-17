@@ -1,6 +1,7 @@
 package com.TTS.Entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.sun.istack.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -14,6 +15,7 @@ import java.util.Set;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "caregories")
+@JsonInclude(JsonInclude.Include.NON_NULL)
 @Entity
 public class Category extends SuperClass {
 	/**

@@ -53,9 +53,12 @@ public class Order extends SuperClass implements Serializable{
 	@OneToMany(mappedBy = "fromOd", fetch = FetchType.EAGER)
 	private List<OrderDetail> orderDetail = new ArrayList<>();
 
-	public void addDetail(OrderDetail odt){
-		orderDetail.add(odt);
-	}
+//	public Double getTotalPrice(){
+//		return orderDetail.stream().mapToDouble(i -> i.getPrice()).sum();
+//	};
+//	public void addDetail(OrderDetail odt){
+//		orderDetail.add(odt);
+//	}
 	@Override
 	public String toString() {
 		return "Order{" +
@@ -66,7 +69,7 @@ public class Order extends SuperClass implements Serializable{
 				", sdt='" + sdt + '\'' +
 				", status=" + status +
 				", accountod=" + accountod +
-				", orderDetail=" + orderDetail +
+				", orderDetail=" + orderDetail.size() +
 				'}';
 	}
 }

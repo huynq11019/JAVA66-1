@@ -125,8 +125,11 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order getbyID(Integer integer) {
 
-        return orderRepo.findById(integer).get();
-
+        Order order = orderRepo.findById(integer).get();
+        List<OrderDetail> orderDetailList = orderDetailRepo.findAllByFromOd_Id(integer);
+        order.setOrderDetail(orderDetailList);
+        System.err.println(orderDetailList.size());
+return order;
     }
 
     @Override
@@ -147,6 +150,15 @@ public class OrderServiceImpl implements OrderService {
         Sort sort = Sort.by(direction, sortBy);
         Pageable paging = PageRequest.of(page, limit, sort);
         return orderRepo.findAll(paging);
+    }
+
+    @Override
+    public Order updateStatus(Integer orderId, Integer status) {
+
+        Order order = orderRepo.getOne(orderId);
+        order.setStatus(status);
+
+        return orderRepo.save(order);
     }
 
 //    public Page<Order> getPage(int page, int limit, String sortBy, String order) {

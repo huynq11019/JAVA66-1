@@ -123,6 +123,7 @@ public class RestAccount {
 
     @PutMapping("/admin/account/setAuthrority")
     public AccountDTO updatePermission(@RequestBody AccountDTO accountDTO) {
+        System.out.println(accountDTO);
         Account account = accountMapper.toEntity(accountDTO);
 //        accService.UpdateAccountWithPermission()
 //        log.info(accountDTO.toString());

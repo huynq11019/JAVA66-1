@@ -12,4 +12,6 @@ public interface OrderService extends AuditService<Order,Integer> {
     List<Order> getListOrderByStatus(Integer Status);
 
     Page<Order> getPage(int page, int limit, String sortBy, String order);
+
+    Order updateStatus(Integer orderId, Integer status);
 }

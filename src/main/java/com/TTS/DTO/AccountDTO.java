@@ -1,6 +1,5 @@
 package com.TTS.DTO;
 
-import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;
 
 import javax.validation.constraints.Email;
@@ -17,7 +16,7 @@ import java.util.Set;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonInclude(JsonInclude.Include.NON_NULL)
+//@JsonInclude(JsonInclude.Include.NON_NULL)
 public class AccountDTO {
 	private Integer id;
 	@NotBlank(message = "Tên không được để trống")

@@ -1,5 +1,6 @@
 package com.TTS.DTO;
 
+import com.TTS.Entity.Product;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -7,13 +8,10 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ReportDTO {
-    private Long totalImcome;
+public class ProductReportDTO {
+    private Product product;
+    private Long soDonhang;
+    private Double totalSaleMoney;
 
-    private Long totalToday;
-
-    private Long OrderToday;
-
-    private Long SeleProducttoday;
 
 }
